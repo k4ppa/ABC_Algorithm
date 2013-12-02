@@ -11,7 +11,7 @@
 
 struct bees
 {
-	float *positions[SN];
+	float positions[SN][D];
 	Flag type[SN];
 	int trial[SN];
 	float p[SN];
