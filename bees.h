@@ -18,5 +18,11 @@ struct bees
 };
 typedef struct bees Bees;
 
+
+void initializeBees(Bees bees);
+	void setBee(Bees bees, int i);
+		void setBeeType(Flag type, int i);
+			
+
 #endif
 
