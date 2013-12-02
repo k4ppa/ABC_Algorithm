@@ -21,11 +21,11 @@ typedef struct bees Bees;
 
 void initializeBees(Bees bees);
 	void setBee(Bees bees, int i);
-		void chooseBeeType(Flag type, int i);
-			void setType(Flag type, unsigned int newType);
+		void chooseBeeType(Bees bees, int i);
+			void setType(Bees bees, int i, unsigned int newType);
 
 void onLookerPlacement();
-	Flag getBeeType();
+	Flag getType();
 			
 
 #endif
