@@ -2,7 +2,7 @@
 
 void initializeBees(Bees bees)
 {
-	int i = 0;
+	int i;
 	for (i=0; i<SN; i++)
 		setBee(bees, i);
 }
