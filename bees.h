@@ -1,14 +1,19 @@
 #ifndef BEES_H_
 #define BEES_H_
 
-#include "StdAfx.h"
+#include "types.h"
+#include "costant.h"
+
+#define EMPLOYED 1
+#define ASSIGNED_ONLOOKER 2
+#define NOT_ASSIGNED_ONLOOKER 3
 
 typedef struct bees Bees;
 
 struct bees
 {
 	float *positions[SN];
-	twoBit type[SN];
+	Flag type[SN];
 	int trial[SN];
 	float p[SN];
 }
