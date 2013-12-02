@@ -8,7 +8,6 @@
 #define ASSIGNED_ONLOOKER 2
 #define NOT_ASSIGNED_ONLOOKER 3
 
-typedef struct bees Bees;
 
 struct bees
 {
@@ -16,7 +15,8 @@ struct bees
 	Flag type[SN];
 	int trial[SN];
 	float p[SN];
-}
+};
+typedef struct bees Bees;
 
 #endif
 
