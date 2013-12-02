@@ -19,20 +19,35 @@ void initializeBees(Bees bees)
 			if (i <= NUMBER_OF_EMPLOYED)
 				setType(bees, i, EMPLOYED);
 			else
-				setType(bees, i, NOT_ASSIGNED_ONLOOKER);
+				setType(bees, i, UNASSIGNED_ONLOOKER);
 		}
 
-			void setType(Bees bees, int i, unsigned int newType)
-			{
-				setBits(bees.type[i], newType);
-			}
-/*
+			
+
 void onLookerPlacement(Bees bees, int i)
 {
-	if (getType(bees.type[i]) == NOT_ASSIGNED_ONLOOKER)
+	//genera distribuzione probabilità
+	if (isUnassignedOnlooker(bees, i))
+	{
+		//scegliere posizione
+		// set trial
+		setType(bees, i, ASSIGNED_ONLOOKER);
+	}
 }
 	
-	Flag getType(Flag type)
+	BOOL isUnassignedOnlooker(Bees bees, int i)
 	{
-		return getBits();
-	}*/
+		return getType(bees, i) == UNASSIGNED_ONLOOKER;
+	}
+
+
+
+void setType(Bees bees, int i, unsigned int newType)
+{
+	setBits(bees.type[i], newType);
+}
+
+unsigned int getType(Bees bees, int i)
+{
+	return getBits(bees.type[i]);
+}

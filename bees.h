@@ -6,8 +6,7 @@
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
-#define NOT_ASSIGNED_ONLOOKER 3
-
+#define UNASSIGNED_ONLOOKER 3
 
 struct bees
 {
@@ -22,10 +21,14 @@ typedef struct bees Bees;
 void initializeBees(Bees bees);
 	void setBee(Bees bees, int i);
 		void chooseBeeType(Bees bees, int i);
-			void setType(Bees bees, int i, unsigned int newType);
+			
 
 void onLookerPlacement();
-	Flag getType();
+	BOOL isUnassignedOnlooker(Bees bees, int i);
+	
+
+void setType(Bees bees, int i, unsigned int newType);		
+unsigned int getType(Bees bees, int i);
 			
 
 #endif
