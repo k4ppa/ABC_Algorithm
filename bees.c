@@ -9,17 +9,30 @@ void initializeBees(Bees bees)
 
 	void setBee(Bees bees, int i)
 	{
-		setBeeType(bees.type[i], i);
+		chooseBeeType(bees.type[i], i);
 		bees.trial[i] = 0;
 		bees.p[i] = 0.0;
 	}
 
-		void setBeeType(Flag type, int i)
+		void chooseBeeType(Flag type, int i)
 		{
 			if (i <= NUMBER_OF_EMPLOYED)
-				setBits(type, EMPLOYED);
+				setType(type, EMPLOYED);
 			else
-				setBits(type, NOT_ASSIGNED_ONLOOKER);
+				setType(type, NOT_ASSIGNED_ONLOOKER);
 		}
 
-			
+			void setType(Flag type, unsigned int newType)
+			{
+				setBits(type, newType);
+			}
+/*
+void onLookerPlacement(Bees bees, int i)
+{
+	if (getBeeType(bees.type[i]) == NOT_ASSIGNED_ONLOOKER)
+}
+	
+	Flag getBeeType(Flag type)
+	{
+		return getBits();
+	}*/

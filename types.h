@@ -3,18 +3,13 @@
 
 #include <stdio.h>
 
-#ifndef NULL
-#define NULL 0
-#endif
-
-
 struct twoBit
 {
      unsigned int bits: 2;
 };
 typedef struct twoBit Flag;
 
-void setBits(Flag type, unsigned int newType);
-unsigned int getType();
+void setBits(Flag type, unsigned int newBits);
+unsigned int getBits();
 
 #endif

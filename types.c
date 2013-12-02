@@ -1,11 +1,11 @@
 #include "types.h"
 
-void setBits(Flag type, unsigned int newType)
+void setBits(Flag type, unsigned int newBits)
 {
-	type.bits = newType;
+	type.bits = newBits;
 }
 
-unsigned int getType(Flag type)
+unsigned int getBits(Flag type)
 {
 	return type.bits;
 }
