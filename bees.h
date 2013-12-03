@@ -27,8 +27,10 @@ void onLookerPlacement();
 	BOOL isUnassignedOnlooker(Bees bees, int i);
 	
 
-void setType(Bees bees, int i, unsigned int newType);		
+void setType(Bees bees, int i, unsigned int newType);
+void setTrial(Bees bees, int i, int newTrial);
 unsigned int getType(Bees bees, int i);
+int getTrial(Bees bees, int i);
 			
 
 #endif

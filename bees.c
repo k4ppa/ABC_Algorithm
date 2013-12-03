@@ -47,7 +47,17 @@ void setType(Bees bees, int i, unsigned int newType)
 	setBits(bees.type[i], newType);
 }
 
+void setTrial(Bees bees, int i, int newTrial)
+{
+	bees.trial[i] = newTrial;
+}
+
 unsigned int getType(Bees bees, int i)
 {
 	return getBits(bees.type[i]);
+}
+
+int getTrial(Bees bees, int i)
+{
+	return bees.trial[i];
 }
