@@ -27,7 +27,7 @@ void initializeBees(Bees bees)
 void employedPlacement(Bees bees, int i)
 {
 	if (isEmployed(bees, i))
-		//scegli posizione
+		generateNewBeePosition(bees.positions[i]);
 		//valuta fitness
 		setTrial(bees, i, 0);
 }
@@ -36,6 +36,19 @@ void employedPlacement(Bees bees, int i)
 	{
 		return getType(bees, i) == EMPLOYED;
 	}
+
+	void generateNewBeePosition(float position[])
+	{
+		int y;
+		for (y=0; y<D; y++)
+		{
+			//position[y] = chooseRandomValueBetweenRange();
+		}
+	}
+
+	/*	float chooseRandomValueBetweenRange()
+		{
+		}*/
 			
 
 void onLookerPlacement(Bees bees, int i)

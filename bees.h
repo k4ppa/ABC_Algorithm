@@ -10,11 +10,11 @@
 
 struct bees
 {
+	Flag type[SN];
 	float positions[SN][D];
 	float fitness[SN];
-	Flag type[SN];
-	int trial[SN];
 	float p[SN];
+	int trial[SN];
 };
 typedef struct bees Bees;
 
@@ -26,6 +26,8 @@ void initializeBees(Bees bees);
 
 void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
+	void generateNewBeePosition(float position[]);
+//		float chooseRandomValueBetweenRange();
 
 
 void onLookerPlacement();
