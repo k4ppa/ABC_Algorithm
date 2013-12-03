@@ -7,4 +7,9 @@
 #define D 3
 #define MAX_CYCLES 1000
 
+#define SPHERE 1
+#define ROSENBROCK 2
+
+#define FUNCTION SPHERE
+
 #endif
