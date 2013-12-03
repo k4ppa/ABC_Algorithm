@@ -22,6 +22,20 @@ void initializeBees(Bees bees)
 				setType(bees, i, UNASSIGNED_ONLOOKER);
 		}
 
+
+
+void employedPlacement(Bees bees, int i)
+{
+	if (isEmployed(bees, i))
+		//scegli posizione
+		//valuta fitness
+		setTrial(bees, i, 0);
+}
+	
+	BOOL isEmployed(Bees bees, int i)
+	{
+		return getType(bees, i) == EMPLOYED;
+	}
 			
 
 void onLookerPlacement(Bees bees, int i)
@@ -30,7 +44,7 @@ void onLookerPlacement(Bees bees, int i)
 	if (isUnassignedOnlooker(bees, i))
 	{
 		//scegliere posizione
-		// set trial
+		setTrial(bees, i, 0);
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
 }

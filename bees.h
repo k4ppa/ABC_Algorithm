@@ -23,6 +23,10 @@ void initializeBees(Bees bees);
 		void chooseBeeType(Bees bees, int i);
 			
 
+void employedPlacement(Bees bees, int);
+	BOOL isEmployed(Bees bees, int i);
+
+
 void onLookerPlacement();
 	BOOL isUnassignedOnlooker(Bees bees, int i);
 	
