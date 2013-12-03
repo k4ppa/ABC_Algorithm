@@ -1,8 +1,10 @@
 #ifndef BEES_H_
 #define BEES_H_
 
+#include <stdlib.h>
 #include "types.h"
 #include "costant.h"
+#include "sphere.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
@@ -27,7 +29,7 @@ void initializeBees(Bees bees);
 void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
 	void generateNewBeePosition(float position[]);
-//		float chooseRandomValueBetweenRange();
+		float chooseRandomValueBetweenRange();
 
 
 void onLookerPlacement();

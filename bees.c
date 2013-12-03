@@ -41,14 +41,15 @@ void employedPlacement(Bees bees, int i)
 	{
 		int y;
 		for (y=0; y<D; y++)
-		{
-			//position[y] = chooseRandomValueBetweenRange();
-		}
+			position[y] = chooseRandomValueBetweenRange();
 	}
 
-	/*	float chooseRandomValueBetweenRange()
+		float chooseRandomValueBetweenRange()
 		{
-		}*/
+			float random = ((float) rand()) / (float) RAND_MAX;
+			float range = MAX_SEARCH_RANGE - MIN_SEARCH_RANGE;
+			return MIN_SEARCH_RANGE + (random * range);
+		}
 			
 
 void onLookerPlacement(Bees bees, int i)
