@@ -26,10 +26,11 @@ void initializeBees(Bees bees)
 
 void employedPlacement(Bees bees, int i)
 {
-	if (isEmployed(bees, i))
+	if (isEmployed(bees, i)) {
 		generateNewPosition(bees, i);
-		//evaluateFitness(bees.positions[i]);
+		evaluateFitness(bees, i);
 		setTrial(bees, i, 0);
+	}
 }
 	
 	BOOL isEmployed(Bees bees, int i)
@@ -51,9 +52,12 @@ void employedPlacement(Bees bees, int i)
 			return MIN_SEARCH_RANGE + (random * range);
 		}
 
-	/*evaluateFitness()
+	void evaluateFitness(Bees bees, int i)
 	{
-	}*/
+		float fitness = formulae(bees.positions[i]);
+		setFitness(bees, i, fitness);
+	}
+		
 			
 
 void onLookerPlacement(Bees bees, int i)
@@ -92,4 +96,14 @@ void setTrial(Bees bees, int i, int newTrial)
 int getTrial(Bees bees, int i)
 {
 	return bees.trial[i];
+}
+
+void setFitness(Bees bees, int i, float newFitness)
+{
+	bees.fitness[i] = newFitness;
+}
+
+float getFitness(Bees bees, int i)
+{
+	return bees.fitness[i];
 }

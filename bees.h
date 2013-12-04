@@ -28,8 +28,9 @@ void initializeBees(Bees bees);
 
 void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
-	void generateNewPosition(float position[]);
+	void generateNewPosition(Bees bees, int i);
 		float chooseRandomValueBetweenRange();
+	void evaluateFitness(Bees bees, int i);
 
 
 void onLookerPlacement();
@@ -40,6 +41,8 @@ void setType(Bees bees, int i, unsigned int newType);
 unsigned int getType(Bees bees, int i);
 void setTrial(Bees bees, int i, int newTrial);
 int getTrial(Bees bees, int i);
+void setFitness(Bees bees, int i, float newFitness);
+float getFitness(Bees bees, int i);
 			
 
 #endif
