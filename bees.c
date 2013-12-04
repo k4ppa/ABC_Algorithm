@@ -76,12 +76,12 @@ void onLookerPlacement(Bees bees, int i)
 
 void setType(Bees bees, int i, unsigned int newType)
 {
-	setBits(bees.type[i], newType);
+	setBits(&bees.type[i], newType);
 }
 
 unsigned int getType(Bees bees, int i)
 {
-	return getBits(bees.type[i]);
+	return getBits(&bees.type[i]);
 }
 
 void setTrial(Bees bees, int i, int newTrial)

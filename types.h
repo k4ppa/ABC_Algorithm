@@ -13,7 +13,7 @@ struct twoBit
 };
 typedef struct twoBit Flag;
 
-void setBits(Flag type, unsigned int newBits);
-unsigned int getBits();
+void setBits(Flag *type, unsigned int newBits);
+unsigned int getBits(Flag *type);
 
 #endif
