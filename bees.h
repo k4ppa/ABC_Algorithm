@@ -28,7 +28,7 @@ void initializeBees(Bees bees);
 
 void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
-	void generateNewBeePosition(float position[]);
+	void generateNewPosition(float position[]);
 		float chooseRandomValueBetweenRange();
 
 
