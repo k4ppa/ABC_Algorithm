@@ -18,7 +18,7 @@ struct bees
 	float p[SN];
 	int trial[SN];
 };
-typedef struct bees Bees;
+typedef struct bees *Bees;
 
 
 void initializeBees(Bees bees);

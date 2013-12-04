@@ -4,7 +4,10 @@
 
 int main()
 {
-	Bees bees;
+	Bees bees = NULL;
+	bees = (Bees) malloc(sizeof (struct bees));
+
+	initializeBees(bees);
 
 	return 0;
 }

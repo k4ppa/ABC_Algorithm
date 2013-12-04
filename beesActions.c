@@ -11,7 +11,7 @@ void initializeBees(Bees bees)
 	{
 		chooseBeeType(bees, i);
 		setTrial(bees, i, 0);
-		bees.p[i] = 0.0;
+		bees->p[i] = 0.0;
 	}
 
 		void chooseBeeType(Bees bees, int i)
@@ -42,7 +42,7 @@ void employedPlacement(Bees bees, int i)
 	{
 		int y;
 		for (y=0; y<D; y++)
-			bees.positions[i][y] = chooseRandomValueBetweenRange();
+			bees->positions[i][y] = chooseRandomValueBetweenRange();
 	}
 
 		float chooseRandomValueBetweenRange()
@@ -54,7 +54,7 @@ void employedPlacement(Bees bees, int i)
 
 	void evaluateFitness(Bees bees, int i)
 	{
-		float fitness = formulae(bees.positions[i]);
+		float fitness = formulae(bees->positions[i]);
 		setFitness(bees, i, fitness);
 	}
 		
