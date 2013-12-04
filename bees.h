@@ -37,8 +37,8 @@ void onLookerPlacement();
 	
 
 void setType(Bees bees, int i, unsigned int newType);
-void setTrial(Bees bees, int i, int newTrial);
 unsigned int getType(Bees bees, int i);
+void setTrial(Bees bees, int i, int newTrial);
 int getTrial(Bees bees, int i);
 			
 
