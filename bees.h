@@ -41,6 +41,7 @@ void foodExploitation(Bees bees, int i);
 	BOOL hasExceededTheLimit(Bees bees, int i);
 	void generatePerturbedPosition(Bees bees, int i);
 		int chooseIndex(int i);
+		float controlifExceedSearchField(float newPosition);
 	
 
 void setType(Bees bees, int i, unsigned int newType);

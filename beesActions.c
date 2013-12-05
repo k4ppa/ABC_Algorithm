@@ -100,15 +100,13 @@ void foodExploitation(Bees bees, int i)
 
 	void generatePerturbedPosition(Bees bees, int i)
 	{
+		float newPosition;
 		int y, k;
 		for (y=0; y<D; y++)
 		{
 			k = chooseIndex(i);
-			bees->positions[i][y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
-			if (bees->positions[i][y] > MAX_SEARCH_RANGE)
-				bees->positions[i][y] = MAX_SEARCH_RANGE;
-			else if (bees->positions[i][y] < MIN_SEARCH_RANGE)
-				bees->positions[i][y] = MIN_SEARCH_RANGE;
+			newPosition = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
+			bees->positions[i][y] = controlifExceedSearchField(newPosition);
 		}
 	}
 
@@ -118,4 +116,14 @@ void foodExploitation(Bees bees, int i)
 			do
 				index = (rand() % (SN - 0)) + 0;
 			while (index == i);
+		}
+
+		float controlifExceedSearchField(float newPosition)
+		{
+			if (newPosition > MAX_SEARCH_RANGE)
+				return MAX_SEARCH_RANGE;
+			else if (newPosition < MIN_SEARCH_RANGE)
+				return MIN_SEARCH_RANGE;
+			
+			return newPosition;
 		}
