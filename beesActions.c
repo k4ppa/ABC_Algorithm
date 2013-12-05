@@ -105,6 +105,10 @@ void foodExploitation(Bees bees, int i)
 		{
 			k = chooseIndex(i);
 			bees->positions[i][y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
+			if (bees->positions[i][y] > MAX_SEARCH_RANGE)
+				bees->positions[i][y] = MAX_SEARCH_RANGE;
+			else if (bees->positions[i][y] < MIN_SEARCH_RANGE)
+				bees->positions[i][y] = MIN_SEARCH_RANGE;
 		}
 	}
 
