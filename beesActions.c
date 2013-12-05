@@ -87,9 +87,22 @@ void foodExploitation(Bees bees, int i)
 		else
 			setType(bees, i, UNASSIGNED_ONLOOKER);
 	}
+	else
+	{
+		generatePerturbedPosition(bees, i);
+	}
 }
 
 	BOOL hasExceededTheLimit(Bees bees, int i)
 	{
 		return getTrial(bees, i) > LIMIT;
+	}
+
+	void generatePerturbedPosition(Bees bees, int i)
+	{
+		int y;
+		for (y=0; y<D; y++)
+		{
+			bees->positions[i][y] = bees->positions[i][y] +
+		}
 	}
