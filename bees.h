@@ -40,6 +40,7 @@ void onLookerPlacement();
 void foodExploitation(Bees bees, int i);
 	BOOL hasExceededTheLimit(Bees bees, int i);
 	void generatePerturbedPosition(Bees bees, int i);
+		int chooseIndex(int i);
 	
 
 void setType(Bees bees, int i, unsigned int newType);

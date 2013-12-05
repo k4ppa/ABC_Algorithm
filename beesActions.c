@@ -100,9 +100,18 @@ void foodExploitation(Bees bees, int i)
 
 	void generatePerturbedPosition(Bees bees, int i)
 	{
-		int y;
+		int y, k;
 		for (y=0; y<D; y++)
 		{
-			bees->positions[i][y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0);
+			k = chooseIndex(i);
+			bees->positions[i][y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
 		}
 	}
+
+		int chooseIndex(int i)
+		{
+			int index;
+			do
+				index = (rand() % (SN - 0)) + 0;
+			while (index == i);
+		}
