@@ -75,3 +75,21 @@ void onLookerPlacement(Bees bees, int i)
 	{
 		return getType(bees, i) == UNASSIGNED_ONLOOKER;
 	}
+
+
+
+void foodExploitation(Bees bees, int i)
+{
+	if (hasExceededTheLimit(bees, i))
+	{
+		if (isEmployed(bees, i))
+			employedPlacement(bees, i);
+		else
+			setType(bees, i, UNASSIGNED_ONLOOKER);
+	}
+}
+
+	BOOL hasExceededTheLimit(Bees bees, int i)
+	{
+		return getTrial(bees, i) > LIMIT;
+	}

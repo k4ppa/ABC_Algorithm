@@ -35,6 +35,10 @@ void employedPlacement(Bees bees, int);
 
 void onLookerPlacement();
 	BOOL isUnassignedOnlooker(Bees bees, int i);
+
+
+void foodExploitation(Bees bees, int i);
+	BOOL hasExceededTheLimit(Bees bees, int i)
 	
 
 void setType(Bees bees, int i, unsigned int newType);
