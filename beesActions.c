@@ -42,14 +42,14 @@ void employedPlacement(Bees bees, int i)
 	{
 		int y;
 		for (y=0; y<D; y++)
-			bees->positions[i][y] = chooseRandomValueBetweenRange();
+			bees->positions[i][y] = chooseRandomValueBetweenRange(MIN_SEARCH_RANGE, MAX_SEARCH_RANGE);
 	}
 
-		float chooseRandomValueBetweenRange()
+		float chooseRandomValueBetweenRange(float lowerBound, float upperBound)
 		{
 			float random = ((float) rand()) / (float) RAND_MAX;
-			float range = MAX_SEARCH_RANGE - MIN_SEARCH_RANGE;
-			return MIN_SEARCH_RANGE + (random * range);
+			float range = upperBound - lowerBound;
+			return lowerBound + (random * range);
 		}
 
 	void evaluateFitness(Bees bees, int i)
@@ -103,6 +103,6 @@ void foodExploitation(Bees bees, int i)
 		int y;
 		for (y=0; y<D; y++)
 		{
-			bees->positions[i][y] = bees->positions[i][y] +
+			bees->positions[i][y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0);
 		}
 	}
