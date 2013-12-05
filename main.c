@@ -41,12 +41,12 @@ int main()
 		employedPlacement(bees, i);
 	printBees(bees);
 
-	for (k=0; k<10; k++) 
+/*	for (k=0; k<10; k++) 
 		values[k] = chooseRandomValueBetweenRange();
 		
 	for (k=0; k<10; k++)
 		printf("Value %d: %f\n", k, values[k]);
-
+*/
 	system("PAUSE");
 	return 0;
 }
