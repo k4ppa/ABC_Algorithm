@@ -5,8 +5,8 @@
 
 #if FUNCTION == SPHERE
 
-	#define MIN_SEARCH_RANGE -100
-	#define MAX_SEARCH_RANGE 100
+	#define MIN_SEARCH_RANGE -100.0
+	#define MAX_SEARCH_RANGE 100.0
 
 	float formulae(float values[]);
 
