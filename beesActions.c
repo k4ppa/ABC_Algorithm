@@ -16,7 +16,7 @@ void initializeBees(Bees bees)
 
 		void chooseBeeType(Bees bees, int i)
 		{
-			if (i <= NUMBER_OF_EMPLOYED)
+			if (i < NUMBER_OF_EMPLOYED)
 				setType(bees, i, EMPLOYED);
 			else
 				setType(bees, i, UNASSIGNED_ONLOOKER);
