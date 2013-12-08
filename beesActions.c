@@ -94,7 +94,7 @@ void foodExploitation(Bees bees, int i)
 	else
 	{
 		generatePerturbedPosition(bees, i, perturbedPosition);
-		//evaluateFitness(bees, i);
+		perturbedFitness = evaluateFitness(perturbedPosition);
 		//chooseBestPosition();
 	}
 }
