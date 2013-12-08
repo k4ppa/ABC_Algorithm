@@ -33,6 +33,7 @@ void employedPlacement(Bees bees, int);
 
 
 void onLookerPlacement();
+	float calcolateP(Bees bees, int i);
 	BOOL isUnassignedOnlooker(Bees bees, int i);
 
 
