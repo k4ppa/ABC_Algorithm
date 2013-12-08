@@ -120,6 +120,8 @@ void foodExploitation(Bees bees, int i)
 			do
 				index = (rand() % (SN - 0)) + 0;
 			while (index == i);
+
+			return index;
 		}
 
 		void controlifExceedSearchField(float newPosition[], int y)
@@ -135,7 +137,7 @@ void foodExploitation(Bees bees, int i)
 		int trial;
 		float perturbedFitness = evaluateFitness(perturbedPosition);
 
-		if (getFitness(bees, i) > perturbedFitness)
+		if (isPerturbedFitnessBetter(bees, i, perturbedFitness))
 		{
 			setPosition(bees, i, perturbedPosition);
 			setFitness(bees, i, perturbedFitness);
@@ -147,3 +149,8 @@ void foodExploitation(Bees bees, int i)
 			setTrial(bees, i, trial+1);
 		}
 	}
+
+		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
+		{
+			return getFitness(bees, i) > perturbedFitness;
+		}
