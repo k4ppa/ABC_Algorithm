@@ -58,8 +58,7 @@ void employedPlacement(Bees bees, int i)
 
 void onLookerPlacement(Bees bees, int i)
 {
-	//genera distribuzione probabilità
-	float newP = calcolateP(bees, i);;
+	float newP = calcolateP(bees, i);
 	if (isUnassignedOnlooker(bees, i))
 	{
 		//scegliere posizione
@@ -72,7 +71,7 @@ void onLookerPlacement(Bees bees, int i)
 	{
 		float fitnessSummation = 0.0;
 		int y;
-		for (y=0; y<D; y++)
+		for (y=0; y<NUMBER_OF_EMPLOYED; y++)
 			fitnessSummation = fitnessSummation + getFitness(bees, i);
 		return getFitness(bees, i) / fitnessSummation;
 	}
