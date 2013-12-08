@@ -30,6 +30,16 @@ float getFitness(Bees bees, int i)
 	return bees->fitness[i];
 }
 
+void setP(Bees bees, int i, float newP)
+{
+	bees->p[i] = newP;
+}
+
+float getP(Bees bees, int i)
+{
+	return bees->p[i];
+}
+
 void setPosition(Bees bees, int i, float newPosition[])
 {
 	int y;

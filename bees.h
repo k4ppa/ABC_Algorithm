@@ -56,6 +56,8 @@ void setTrial(Bees bees, int i, int newTrial);
 int getTrial(Bees bees, int i);
 void setFitness(Bees bees, int i, float newFitness);
 float getFitness(Bees bees, int i);
+void setP(Bees bees, int i, float newP);
+float getP(Bees bees, int i);
 void setPosition(Bees bees, int i, float newPosition[]);
 			
 
