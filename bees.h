@@ -22,8 +22,7 @@ typedef struct bees *Bees;
 
 
 void initializeBees(Bees bees);
-	void setBee(Bees bees, int i);
-		void chooseBeeType(Bees bees, int i);
+	void chooseBeeType(Bees bees, int i);
 			
 
 void employedPlacement(Bees bees, int);

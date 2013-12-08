@@ -4,23 +4,16 @@ void initializeBees(Bees bees)
 {
 	int i;
 	for (i=0; i<SN; i++)
-		setBee(bees, i);
+		chooseBeeType(bees, i);
 }
 
-	void setBee(Bees bees, int i)
+	void chooseBeeType(Bees bees, int i)
 	{
-		chooseBeeType(bees, i);
-		setTrial(bees, i, 0);
-		bees->p[i] = 0.0;
+		if (i < NUMBER_OF_EMPLOYED)
+			setType(bees, i, EMPLOYED);
+		else
+			setType(bees, i, UNASSIGNED_ONLOOKER);
 	}
-
-		void chooseBeeType(Bees bees, int i)
-		{
-			if (i < NUMBER_OF_EMPLOYED)
-				setType(bees, i, EMPLOYED);
-			else
-				setType(bees, i, UNASSIGNED_ONLOOKER);
-		}
 
 
 
@@ -33,6 +26,7 @@ void employedPlacement(Bees bees, int i)
 		fitness = evaluateFitness(bees->positions[i]);
 		setFitness(bees, i, fitness);
 		setTrial(bees, i, 0);
+		setP(bees, i, 0.0);
 	}
 }
 	
@@ -69,6 +63,7 @@ void onLookerPlacement(Bees bees, int i)
 	{
 		//scegliere posizione
 		setTrial(bees, i, 0);
+		setP(bees, i, 0.0);
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
 }
