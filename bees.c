@@ -29,3 +29,10 @@ float getFitness(Bees bees, int i)
 {
 	return bees->fitness[i];
 }
+
+void setPosition(Bees bees, int i, float newPosition[])
+{
+	int y;
+	for (y=0; y<D; y++)
+		bees->positions[i][y] = newPosition[y];
+}

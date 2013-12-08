@@ -82,7 +82,7 @@ void onLookerPlacement(Bees bees, int i)
 
 void foodExploitation(Bees bees, int i)
 {
-	float perturbedPosition[D], perturbedFitness;
+	float perturbedPosition[D];
 
 	if (hasExceededTheLimit(bees, i))
 	{
@@ -94,8 +94,7 @@ void foodExploitation(Bees bees, int i)
 	else
 	{
 		generatePerturbedPosition(bees, i, perturbedPosition);
-		perturbedFitness = evaluateFitness(perturbedPosition);
-		chooseBestPosition(bees, i, perturbedFitness);
+		chooseBestPosition(bees, i, perturbedPosition);
 	}
 }
 
@@ -131,13 +130,15 @@ void foodExploitation(Bees bees, int i)
 				newPosition[y] = MIN_SEARCH_RANGE;
 		}
 
-	void chooseBestPosition(Bees bees, int i, float perturbedFitness)
+	void chooseBestPosition(Bees bees, int i, float perturbedPosition[])
 	{
 		int trial;
+		float perturbedFitness = evaluateFitness(perturbedPosition);
 
 		if (getFitness(bees, i) > perturbedFitness)
 		{
-			//setPosition
+			setPosition(bees, i, perturbedPosition);
+			setFitness(bees, i, perturbedFitness);
 			setTrial(bees, i, 0);
 		}
 		else

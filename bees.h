@@ -42,7 +42,7 @@ void foodExploitation(Bees bees, int i);
 	void generatePerturbedPosition(Bees bees, int i);
 		int chooseIndex(int i);
 		void controlifExceedSearchField(float newPosition[], int y);
-	void chooseBestPosition(Bees bees, int i, float perturbedFitness);
+	void chooseBestPosition(Bees bees, int i, float perturbedPosition[]);
 	
 
 void setType(Bees bees, int i, unsigned int newType);
@@ -51,6 +51,7 @@ void setTrial(Bees bees, int i, int newTrial);
 int getTrial(Bees bees, int i);
 void setFitness(Bees bees, int i, float newFitness);
 float getFitness(Bees bees, int i);
+void setPosition(Bees bees, int i, float newPosition[]);
 			
 
 #endif
