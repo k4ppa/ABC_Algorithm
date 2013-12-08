@@ -44,6 +44,8 @@ void foodExploitation(Bees bees, int i);
 		void controlifExceedSearchField(float newPosition[], int y);
 	void chooseBestPosition(Bees bees, int i, float perturbedPosition[]);
 		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness);
+		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness);
+		void increaseTrial(Bees bees, int i);
 	
 
 void setType(Bees bees, int i, unsigned int newType);

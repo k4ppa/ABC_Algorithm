@@ -134,23 +134,28 @@ void foodExploitation(Bees bees, int i)
 
 	void chooseBestPosition(Bees bees, int i, float perturbedPosition[])
 	{
-		int trial;
 		float perturbedFitness = evaluateFitness(perturbedPosition);
 
 		if (isPerturbedFitnessBetter(bees, i, perturbedFitness))
-		{
-			setPosition(bees, i, perturbedPosition);
-			setFitness(bees, i, perturbedFitness);
-			setTrial(bees, i, 0);
-		}
+			replacePosition(bees, i, perturbedPosition, perturbedFitness);	
 		else
-		{
-			trial = getTrial(bees, i);
-			setTrial(bees, i, trial+1);
-		}
+			increaseTrial(bees, i);
 	}
 
 		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
 		{
 			return getFitness(bees, i) > perturbedFitness;
+		}
+
+		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness)
+		{
+			setPosition(bees, i, perturbedPosition);
+			setFitness(bees, i, perturbedFitness);
+			setTrial(bees, i, 0);
+		}
+
+		void increaseTrial(Bees bees, int i)
+		{
+			int trial = getTrial(bees, i);
+			setTrial(bees, i, trial+1);
 		}
