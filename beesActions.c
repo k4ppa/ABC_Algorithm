@@ -95,7 +95,7 @@ void foodExploitation(Bees bees, int i)
 	{
 		generatePerturbedPosition(bees, i, perturbedPosition);
 		perturbedFitness = evaluateFitness(perturbedPosition);
-		//chooseBestPosition();
+		chooseBestPosition(bees, i, perturbedFitness);
 	}
 }
 
@@ -130,7 +130,19 @@ void foodExploitation(Bees bees, int i)
 			else if (newPosition[y] < MIN_SEARCH_RANGE)
 				newPosition[y] = MIN_SEARCH_RANGE;
 		}
-/*
-	void chooseBestPosition()
+
+	void chooseBestPosition(Bees bees, int i, float perturbedFitness)
 	{
-	}*/
+		int trial;
+
+		if (getFitness(bees, i) > perturbedFitness)
+		{
+			//setPosition
+			setTrial(bees, i, 0);
+		}
+		else
+		{
+			trial = getTrial(bees, i);
+			setTrial(bees, i, trial+1);
+		}
+	}

@@ -42,6 +42,7 @@ void foodExploitation(Bees bees, int i);
 	void generatePerturbedPosition(Bees bees, int i);
 		int chooseIndex(int i);
 		void controlifExceedSearchField(float newPosition[], int y);
+	void chooseBestPosition(Bees bees, int i, float perturbedFitness);
 	
 
 void setType(Bees bees, int i, unsigned int newType);
