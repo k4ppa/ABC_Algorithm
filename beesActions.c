@@ -26,10 +26,12 @@ void initializeBees(Bees bees)
 
 void employedPlacement(Bees bees, int i)
 {
+	float fitness;
 	if (isEmployed(bees, i)) 
 	{
 		generateNewPosition(bees, i);
-		evaluateFitness(bees, i);
+		fitness = evaluateFitness(bees->positions[i]);
+		setFitness(bees, i, fitness);
 		setTrial(bees, i, 0);
 	}
 }
@@ -53,10 +55,9 @@ void employedPlacement(Bees bees, int i)
 			return lowerBound + (random * range);
 		}
 
-	void evaluateFitness(Bees bees, int i)
+	float evaluateFitness(float position[])
 	{
-		float fitness = formulae(bees->positions[i]);
-		setFitness(bees, i, fitness);
+		return formulae(position);
 	}
 		
 			

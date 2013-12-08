@@ -30,7 +30,7 @@ void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
 	void generateNewPosition(Bees bees, int i);
 		float chooseRandomValueBetweenRange(float lowerBound, float upperBound);
-	void evaluateFitness(Bees bees, int i);
+	float evaluateFitness(float position[]);
 
 
 void onLookerPlacement();
