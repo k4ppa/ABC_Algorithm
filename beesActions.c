@@ -58,7 +58,11 @@ void employedPlacement(Bees bees, int i)
 
 void onLookerPlacement(Bees bees, int i)
 {
-	float newP = calcolateP(bees, i);
+	float newP;
+	if (isEmployed(bees, i)) 
+		newP = calcolateP(bees, i);
+		setP(bees, i, newP);
+
 	if (isUnassignedOnlooker(bees, i))
 	{
 		//scegliere posizione
