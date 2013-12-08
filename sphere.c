@@ -1,5 +1,7 @@
 #include "sphere.h"
 
+#if FUNCTION == SPHERE
+
 float formulae(float values[])
 {
 	float result = 0.0;
@@ -9,3 +11,5 @@ float formulae(float values[])
 		result = result + (values[i]*values[i]);
 	return result;
 }
+
+#endif

@@ -5,6 +5,7 @@
 #include "types.h"
 #include "costant.h"
 #include "sphere.h"
+#include "rosenbrock.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
