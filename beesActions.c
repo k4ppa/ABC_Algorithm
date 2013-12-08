@@ -82,25 +82,31 @@ void onLookerPlacement(Bees bees, int i)
 
 void foodExploitation(Bees bees, int i)
 {
-	float perturbedPosition[D];
-
 	if (hasExceededTheLimit(bees, i))
+		resetBee(bees, i);
+	else
+		tryToFindBetterPosition(bees, i);
+}
+
+	BOOL hasExceededTheLimit(Bees bees, int i)
+	{
+		return getTrial(bees, i) > LIMIT;
+	}
+
+
+	void resetBee(Bees bees, int i)
 	{
 		if (isEmployed(bees, i))
 			employedPlacement(bees, i);
 		else
 			setType(bees, i, UNASSIGNED_ONLOOKER);
 	}
-	else
+
+	void tryToFindBetterPosition(Bees bees, int i)
 	{
+		float perturbedPosition[D];
 		generatePerturbedPosition(bees, i, perturbedPosition);
 		chooseBestPosition(bees, i, perturbedPosition);
-	}
-}
-
-	BOOL hasExceededTheLimit(Bees bees, int i)
-	{
-		return getTrial(bees, i) > LIMIT;
 	}
 
 	void generatePerturbedPosition(Bees bees, int i, float perturbedPosition[])
@@ -136,13 +142,13 @@ void foodExploitation(Bees bees, int i)
 	{
 		float perturbedFitness = evaluateFitness(perturbedPosition);
 
-		if (isPerturbedFitnessBetter(bees, i, perturbedFitness))
+		if (isPerturbedFitnessIsBetter(bees, i, perturbedFitness))
 			replacePosition(bees, i, perturbedPosition, perturbedFitness);	
 		else
 			increaseTrial(bees, i);
 	}
 
-		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
+		BOOL isPerturbedFitnessIsBetter(Bees bees, int i, float perturbedFitness)
 		{
 			return getFitness(bees, i) > perturbedFitness;
 		}

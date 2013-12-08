@@ -39,11 +39,13 @@ void onLookerPlacement();
 
 void foodExploitation(Bees bees, int i);
 	BOOL hasExceededTheLimit(Bees bees, int i);
+	void resetBee(Bees bees, int i);
+	void tryToFindBetterPosition(Bees bees, int i);
 	void generatePerturbedPosition(Bees bees, int i, float perturbedPosition[]);
 		int chooseIndex(int i);
 		void controlifExceedSearchField(float newPosition[], int y);
 	void chooseBestPosition(Bees bees, int i, float perturbedPosition[]);
-		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness);
+		BOOL isPerturbedFitnessIsBetter(Bees bees, int i, float perturbedFitness);
 		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness);
 		void increaseTrial(Bees bees, int i);
 	
