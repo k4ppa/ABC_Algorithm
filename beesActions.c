@@ -26,7 +26,8 @@ void initializeBees(Bees bees)
 
 void employedPlacement(Bees bees, int i)
 {
-	if (isEmployed(bees, i)) {
+	if (isEmployed(bees, i)) 
+	{
 		generateNewPosition(bees, i);
 		evaluateFitness(bees, i);
 		setTrial(bees, i, 0);
@@ -80,6 +81,8 @@ void onLookerPlacement(Bees bees, int i)
 
 void foodExploitation(Bees bees, int i)
 {
+	float perturbedPosition[D], perturbedFitness;
+
 	if (hasExceededTheLimit(bees, i))
 	{
 		if (isEmployed(bees, i))
@@ -89,7 +92,9 @@ void foodExploitation(Bees bees, int i)
 	}
 	else
 	{
-		generatePerturbedPosition(bees, i);
+		generatePerturbedPosition(bees, i, perturbedPosition);
+		//evaluateFitness(bees, i);
+		//chooseBestPosition();
 	}
 }
 
@@ -98,15 +103,14 @@ void foodExploitation(Bees bees, int i)
 		return getTrial(bees, i) > LIMIT;
 	}
 
-	void generatePerturbedPosition(Bees bees, int i)
+	void generatePerturbedPosition(Bees bees, int i, float perturbedPosition[])
 	{
-		float newPosition;
 		int y, k;
 		for (y=0; y<D; y++)
 		{
 			k = chooseIndex(i);
-			newPosition = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
-			bees->positions[i][y] = controlifExceedSearchField(newPosition);
+			perturbedPosition[y] = bees->positions[i][y] + chooseRandomValueBetweenRange(-1.0, 1.0) * (bees->positions[i][y] - bees->positions[k][y]);
+			controlifExceedSearchField(perturbedPosition, y);
 		}
 	}
 
@@ -118,12 +122,14 @@ void foodExploitation(Bees bees, int i)
 			while (index == i);
 		}
 
-		float controlifExceedSearchField(float newPosition)
+		void controlifExceedSearchField(float newPosition[], int y)
 		{
-			if (newPosition > MAX_SEARCH_RANGE)
-				return MAX_SEARCH_RANGE;
-			else if (newPosition < MIN_SEARCH_RANGE)
-				return MIN_SEARCH_RANGE;
-			
-			return newPosition;
+			if (newPosition[y] > MAX_SEARCH_RANGE)
+				newPosition[y] = MAX_SEARCH_RANGE;
+			else if (newPosition[y] < MIN_SEARCH_RANGE)
+				newPosition[y] = MIN_SEARCH_RANGE;
 		}
+/*
+	void chooseBestPosition()
+	{
+	}*/
