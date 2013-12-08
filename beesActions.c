@@ -64,7 +64,6 @@ void onLookerPlacement(Bees bees, int i)
 	{
 		//scegliere posizione
 		setTrial(bees, i, 0);
-		setP(bees, i, 0.0);
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
 }

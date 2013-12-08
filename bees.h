@@ -15,7 +15,7 @@ struct bees
 	Flag type[SN];
 	float positions[SN][D];
 	float fitness[SN];
-	float p[SN];
+	float p[NUMBER_OF_EMPLOYED];
 	int trial[SN];
 };
 typedef struct bees *Bees;
