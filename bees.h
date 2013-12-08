@@ -1,11 +1,11 @@
 #ifndef BEES_H_
 #define BEES_H_
 
-#include <stdlib.h>
 #include "types.h"
 #include "costant.h"
 #include "sphere.h"
 #include "rosenbrock.h"
+#include "ackley.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2

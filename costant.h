@@ -10,6 +10,7 @@
 
 #define SPHERE 1
 #define ROSENBROCK 2
+#define ACKLEY 3
 
 #define FUNCTION SPHERE
 
