@@ -14,7 +14,7 @@ float formulae(float values[])
 
 		for (i=0; i<D; i++)
 			partialResult = partialResult + ((float) pow(values[i], 2));
-		partialResult = (float) -0.2 * (float) sqrt(partialResult / D);
+		partialResult = -0.2f * (float) sqrt(partialResult / D);
 		partialResult = -20 * (float) exp(partialResult);
 		return partialResult;
 	}

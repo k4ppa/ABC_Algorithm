@@ -11,8 +11,8 @@ float formulae(float values[])
 	for (i=0; i<D-1; i++)
 	{
 		partialResult1 = values[i+1] - (float) pow(values[i], 2);
-		partialResult1 = (float) 100.0 * (float) pow(partialResult1, 2);
-		partialResult2 = values[i] - (float) 1.0;
+		partialResult1 = 100.0f * (float) pow(partialResult1, 2);
+		partialResult2 = values[i] - 1.0f;
 		partialResult2 = (float) pow(partialResult2, 2);
 		result = result + (partialResult1 + partialResult2);
 	}
