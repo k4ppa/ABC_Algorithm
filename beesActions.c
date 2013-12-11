@@ -87,16 +87,21 @@ void onLookerPlacement(Bees bees, int i)
 
 	void chooseOnlookerPosition(Bees bees)
 	{
-		float totalFitness = getFitness(bees, 0);
-		int selectedEmployed = 0;
-		int y;
-		for (y=1; y<NUMBER_OF_EMPLOYED; y++)
-		{
-			totalFitness = totalFitness + getFitness(bees, y);
-			if (chooseRandomValueBetweenRange(0.0f, 1.0f) < getFitness(bees, y) / totalFitness)
-				selectedEmployed = y;
-		}
+		int selectedEmployed = rouletteWheelEmployedSelection(bees);
 	}
+
+		int rouletteWheelEmployedSelection(Bees bees)
+		{
+			float totalFitness = getFitness(bees, 0);
+			int y;
+			for (y=1; y<NUMBER_OF_EMPLOYED; y++)
+			{
+				totalFitness = totalFitness + getFitness(bees, y);
+				if (chooseRandomValueBetweenRange(0.0f, 1.0f) < getFitness(bees, y) / totalFitness)
+					return y;
+			}
+			return 0;
+		}
 	
 	BOOL isUnassignedOnlooker(Bees bees, int i)
 	{

@@ -37,6 +37,7 @@ void onLookerPlacement();
 	void generateEmployedP(Bees bees, int i);
 		float calcolateP(Bees bees, int i);
 	void chooseOnlookerPosition(Bees bees);
+		int rouletteWheelEmployedSelection(Bees bees);
 	BOOL isUnassignedOnlooker(Bees bees, int i);
 
 
