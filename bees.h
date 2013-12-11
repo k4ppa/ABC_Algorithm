@@ -36,7 +36,7 @@ void employedPlacement(Bees bees, int);
 void onLookerPlacement();
 	void generateEmployedP(Bees bees, int i);
 		float calcolateP(Bees bees, int i);
-	void chooseOnlookerPosition(Bees bees);
+	void chooseOnlookerPosition(Bees bees, int i);
 		int rouletteWheelEmployedSelection(Bees bees);
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed);
 	BOOL isUnassignedOnlooker(Bees bees, int i);
@@ -64,6 +64,7 @@ float getFitness(Bees bees, int i);
 void setP(Bees bees, int i, float newP);
 float getP(Bees bees, int i);
 void setPosition(Bees bees, int i, float newPosition[]);
+float *getPosition(Bees bees, int i);
 			
 
 #endif

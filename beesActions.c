@@ -62,7 +62,7 @@ void onLookerPlacement(Bees bees, int i)
 
 	if (isUnassignedOnlooker(bees, i))
 	{
-		chooseOnlookerPosition(bees);
+		chooseOnlookerPosition(bees, i);
 		setTrial(bees, i, 0);
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
@@ -85,7 +85,7 @@ void onLookerPlacement(Bees bees, int i)
 			return getFitness(bees, i) / fitnessSummation;
 		}
 
-	void chooseOnlookerPosition(Bees bees)
+	void chooseOnlookerPosition(Bees bees, int i)
 	{
 		int selectedEmployed = rouletteWheelEmployedSelection(bees);
 		moveOnlookerInPosition(bees, i, selectedEmployed);

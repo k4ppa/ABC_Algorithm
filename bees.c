@@ -46,3 +46,8 @@ void setPosition(Bees bees, int i, float newPosition[])
 	for (y=0; y<D; y++)
 		bees->positions[i][y] = newPosition[y];
 }
+
+float *getPosition(Bees bees, int i)
+{
+	return bees->positions[i];
+}
