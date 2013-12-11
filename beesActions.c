@@ -58,10 +58,7 @@ void employedPlacement(Bees bees, int i)
 
 void onLookerPlacement(Bees bees, int i)
 {
-	float newP;
-	if (isEmployed(bees, i)) 
-		newP = calcolateP(bees, i);
-		setP(bees, i, newP);
+	generateEmployedP(bees, i);
 
 	if (isUnassignedOnlooker(bees, i))
 	{
@@ -70,15 +67,23 @@ void onLookerPlacement(Bees bees, int i)
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
 }
-	
-	float calcolateP(Bees bees, int i)
+
+	void generateEmployedP(Bees bees, int i)
 	{
-		float fitnessSummation = 0.0;
-		int y;
-		for (y=0; y<NUMBER_OF_EMPLOYED; y++)
-			fitnessSummation = fitnessSummation + getFitness(bees, i);
-		return getFitness(bees, i) / fitnessSummation;
+		float newP;
+		if (isEmployed(bees, i)) 
+			newP = calcolateP(bees, i);
+			setP(bees, i, newP);
 	}
+	
+		float calcolateP(Bees bees, int i)
+		{
+			float fitnessSummation = 0.0;
+			int y;
+			for (y=0; y<NUMBER_OF_EMPLOYED; y++)
+				fitnessSummation = fitnessSummation + getFitness(bees, i);
+			return getFitness(bees, i) / fitnessSummation;
+		}
 	
 	BOOL isUnassignedOnlooker(Bees bees, int i)
 	{
