@@ -88,6 +88,7 @@ void onLookerPlacement(Bees bees, int i)
 	void chooseOnlookerPosition(Bees bees)
 	{
 		int selectedEmployed = rouletteWheelEmployedSelection(bees);
+		moveOnlookerInPosition(bees, i, selectedEmployed);
 	}
 
 		int rouletteWheelEmployedSelection(Bees bees)
@@ -101,6 +102,11 @@ void onLookerPlacement(Bees bees, int i)
 					return y;
 			}
 			return 0;
+		}
+
+		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
+		{
+			setPosition(bees, i, getPosition(bees, selectedEmployed));
 		}
 	
 	BOOL isUnassignedOnlooker(Bees bees, int i)
