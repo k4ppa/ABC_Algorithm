@@ -62,7 +62,7 @@ void onLookerPlacement(Bees bees, int i)
 
 	if (isUnassignedOnlooker(bees, i))
 	{
-		//scegliere posizione
+		chooseOnlookerPosition(bees);
 		setTrial(bees, i, 0);
 		setType(bees, i, ASSIGNED_ONLOOKER);
 	}
@@ -84,6 +84,19 @@ void onLookerPlacement(Bees bees, int i)
 				fitnessSummation = fitnessSummation + getFitness(bees, i);
 			return getFitness(bees, i) / fitnessSummation;
 		}
+
+	void chooseOnlookerPosition(Bees bees)
+	{
+		float totalFitness = getFitness(bees, 0);
+		int selectedEmployed = 0;
+		int y;
+		for (y=1; y<NUMBER_OF_EMPLOYED; y++)
+		{
+			totalFitness = totalFitness + getFitness(bees, y);
+			if (chooseRandomValueBetweenRange(0.0f, 1.0f) < getFitness(bees, y) / totalFitness)
+				selectedEmployed = y;
+		}
+	}
 	
 	BOOL isUnassignedOnlooker(Bees bees, int i)
 	{
