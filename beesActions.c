@@ -26,7 +26,7 @@ void employedPlacement(Bees bees, int i)
 		fitness = evaluateFitness(bees->positions[i]);
 		setFitness(bees, i, fitness);
 		setTrial(bees, i, 0);
-		setP(bees, i, 0.0);
+		//setP(bees, i, 0.0);
 	}
 }
 	
@@ -58,8 +58,7 @@ void employedPlacement(Bees bees, int i)
 
 void onLookerPlacement(Bees bees, int i)
 {
-	generateEmployedP(bees, i);
-
+	//generateEmployedP(bees, i);
 	if (isUnassignedOnlooker(bees, i))
 	{
 		chooseOnlookerPosition(bees, i);
