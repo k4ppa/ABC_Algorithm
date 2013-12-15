@@ -10,6 +10,7 @@
 #include "weierstrass.h"
 #include "rastrigin.h"
 #include "nonContinuousRastrigin.h"
+#include "schwefel.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
