@@ -24,12 +24,22 @@ void printBees(Bees bees)
     }
 }
 
+void prindRandomValueBetweenRange(float min, float max)
+{
+	float values[10];
+	int k;
+	for (k=0; k<10; k++) 
+        values[k] = chooseRandomValueBetweenRange(min, max);
+                
+    for (k=0; k<10; k++)
+		printf("Value(%.0f, %.0f) %d: %f\n", min, max, k, values[k]);
+}
+
 
 int main()
 {
     Bees bees = NULL;
-    int i, k;
-    float values[10];
+    int i;
         
     bees = (Bees) malloc(sizeof (struct bees));
 	srand(time(0));
@@ -43,12 +53,10 @@ int main()
 	printf("EMPLOYED PLACEMENT\n");
     printBees(bees);
 
-/*  for (k=0; k<10; k++) 
-        values[k] = chooseRandomValueBetweenRange();
-                
-    for (k=0; k<10; k++)
-		printf("Value %d: %f\n", k, values[k]);
-*/
+	prindRandomValueBetweenRange(-1, 1);
+	prindRandomValueBetweenRange(0, 1);
+	prindRandomValueBetweenRange(-32768, 32768);
+
     system("PAUSE");
     return 0;
 }
