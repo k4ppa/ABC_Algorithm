@@ -84,6 +84,11 @@ void onLookerPlacement(Bees bees, int i)
 			return getFitness(bees, i) / fitnessSummation;
 		}
 
+	BOOL isUnassignedOnlooker(Bees bees, int i)
+	{
+		return getType(bees, i) == UNASSIGNED_ONLOOKER;
+	}
+
 	void chooseOnlookerPosition(Bees bees, int i)
 	{
 		int selectedEmployed = rouletteWheelEmployedSelection(bees);
@@ -108,11 +113,6 @@ void onLookerPlacement(Bees bees, int i)
 			setPosition(bees, i, getPosition(bees, selectedEmployed));
 		}
 	
-	BOOL isUnassignedOnlooker(Bees bees, int i)
-	{
-		return getType(bees, i) == UNASSIGNED_ONLOOKER;
-	}
-
 
 
 void foodExploitation(Bees bees, int i)
