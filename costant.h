@@ -13,7 +13,8 @@
 #define ACKLEY 3
 #define GRIEWANK 4
 #define WEIERSTRASS 5
+#define RASTRIGIN 6
 
-#define FUNCTION WEIERSTRASS
+#define FUNCTION RASTRIGIN
 
 #endif
