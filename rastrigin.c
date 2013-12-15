@@ -11,8 +11,8 @@ float formulae(float values[])
 	for (i=0; i<D; i++)
 	{
 		partialResult = 2 * (float) M_PI * values[i];
-		partialResult = 10 * (float) cos(partialResult);
-		result = result + (float) pow(values[i], 2) - partialResult + 10;
+		partialResult = 10 * cosf(partialResult);
+		result = result + powf(values[i], 2) - partialResult + 10;
 	}
 	return result;
 }

@@ -15,7 +15,7 @@ float formulae(float values[])
 		float result = 0.0;
 		int i;
 		for (i=0; i<D; i++)
-			result = result + (float) pow(values[i], 2);
+			result = result + powf(values[i], 2);
 		return result;
 	}
 
@@ -25,8 +25,8 @@ float formulae(float values[])
 		float partialResult;
 		int i;
 		for (i=0; i<D; i++) {
-			partialResult = values[i] / (float) sqrt((float) i);
-			result = result * (float) cos(partialResult);
+			partialResult = values[i] / sqrtf((float) i);
+			result = result * cosf(partialResult);
 		}
 		return result;
 	}

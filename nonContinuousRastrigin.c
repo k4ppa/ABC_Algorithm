@@ -11,16 +11,16 @@ float formulae(float values[])
 	for (i=0; i<D; i++)
 	{
 		partialResult = 2 * (float) M_PI * values[i];
-		partialResult = 10 * (float) cos(partialResult);
+		partialResult = 10 * cosf(partialResult);
 		value = calculateValue(values[i]);
-		result = result + (float) pow(value, 2) - partialResult + 10;
+		result = result + powf(value, 2) - partialResult + 10;
 	}
 	return result;
 }
 
 	float calculateValue(float value)
 	{
-		if (abs(value) >= 0.5)
+		if (fabs(value) >= 0.5)
 			return (2 * (float) round(value)) / 2;
 		return value;
 	}

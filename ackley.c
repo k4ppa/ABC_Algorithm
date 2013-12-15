@@ -13,9 +13,9 @@ float formulae(float values[])
 		int i;
 
 		for (i=0; i<D; i++)
-			partialResult = partialResult + ((float) pow(values[i], 2));
-		partialResult = -0.2f * (float) sqrt(partialResult / D);
-		partialResult = -20 * (float) exp(partialResult);
+			partialResult = partialResult + (powf(values[i], 2));
+		partialResult = -0.2f * sqrtf(partialResult / D);
+		partialResult = -20 * expf(partialResult);
 		return partialResult;
 	}
 
@@ -25,8 +25,8 @@ float formulae(float values[])
 		int i;
 
 		for (i=0; i<D; i++)
-			partialResult = partialResult + ((float) cos(2 * M_PI * values[i]));
-		partialResult = (float) exp(partialResult / D) + 20 + (float) M_E;
+			partialResult = partialResult + (cosf(2 * M_PI * values[i]));
+		partialResult = expf(partialResult / D) + 20 + (float) M_E;
 		return partialResult;
 	}
 

@@ -36,8 +36,8 @@ float formulae(float values[])
 		int kMax = 20;
 
 		for (k=0; k<kMax; k++) {
-			partialResult = 2 * (float) M_PI * (float) pow(b, k) * num;
-			result = result + ((float) pow(a, k) * (float) cos(partialResult));
+			partialResult = 2 * (float) M_PI * powf(b, k) * num;
+			result = result + (powf(a, k) * cosf(partialResult));
 		}
 		return result;
 	}
