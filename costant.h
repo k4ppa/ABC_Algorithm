@@ -11,7 +11,8 @@
 #define SPHERE 1
 #define ROSENBROCK 2
 #define ACKLEY 3
+#define GRIEWANK 4
 
-#define FUNCTION SPHERE
+#define FUNCTION GRIEWANK
 
 #endif

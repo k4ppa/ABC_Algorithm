@@ -6,6 +6,7 @@
 #include "sphere.h"
 #include "rosenbrock.h"
 #include "ackley.h"
+#include "griewank.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
