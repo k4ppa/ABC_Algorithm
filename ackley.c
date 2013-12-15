@@ -4,7 +4,7 @@
 
 float formulae(float values[])
 {	
-	return firstCalculation(values) - secondCalculation(values);
+	return firstCalculation(values) - secondCalculation(values) + 20 + (float) M_E;
 }
 
 	float firstCalculation(float values[])
@@ -21,13 +21,12 @@ float formulae(float values[])
 
 	float secondCalculation(float values[])
 	{
-		float partialResult = 0.0;
+		float result = 0.0;
 		int i;
 
 		for (i=0; i<D; i++)
-			partialResult = partialResult + ((float) cos(2 * M_PI * values[i]));
-		partialResult = (float) exp(partialResult / D) + 20 + (float) M_E;
-		return partialResult;
+			result = result + ((float) cos(2 * M_PI * values[i]));
+		return (float) exp(result / D);
 	}
 
 #endif
