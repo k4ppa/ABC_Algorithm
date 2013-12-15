@@ -57,6 +57,12 @@ int main()
 		onlookerPlacement(bees, i);
 	printf("ONLOOKER PLACEMENT\n");
     printBees(bees);
+
+	for (i=0; i<SN; i++)
+		foodExploitation(bees, i);
+	printf("FOOD EXPLOITATION\n");
+	printBees(bees);
+
 /*
 	prindRandomValueBetweenRange(-1, 1);
 	prindRandomValueBetweenRange(0, 1);
