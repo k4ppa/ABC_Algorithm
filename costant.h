@@ -12,7 +12,8 @@
 #define ROSENBROCK 2
 #define ACKLEY 3
 #define GRIEWANK 4
+#define WEIERSTRASS 5
 
-#define FUNCTION GRIEWANK
+#define FUNCTION WEIERSTRASS
 
 #endif

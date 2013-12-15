@@ -7,6 +7,7 @@
 #include "rosenbrock.h"
 #include "ackley.h"
 #include "griewank.h"
+#include "weierstrass.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
