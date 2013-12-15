@@ -25,7 +25,7 @@ float formulae(float values[])
 		float partialResult;
 		int i;
 		for (i=0; i<D; i++) {
-			partialResult = values[i] / (float) sqrt((float) i);
+			partialResult = values[i] / (float) sqrt((float) i+1);
 			result = result * (float) cos(partialResult);
 		}
 		return result;

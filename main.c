@@ -6,7 +6,7 @@ void inizializeValues(float values[])
 {
 	int i;
 	for (i=0; i<D; i++)
-		values[i] = 420.96f;
+		values[i] = 0;
 }
 
 void printValues(float values[])
