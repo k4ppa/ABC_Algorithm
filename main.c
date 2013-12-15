@@ -53,10 +53,15 @@ int main()
 	printf("EMPLOYED PLACEMENT\n");
     printBees(bees);
 
+	for(i=0; i<SN; i++)
+		onlookerPlacement(bees, i);
+	printf("ONLOOKER PLACEMENT\n");
+    printBees(bees);
+/*
 	prindRandomValueBetweenRange(-1, 1);
 	prindRandomValueBetweenRange(0, 1);
 	prindRandomValueBetweenRange(-32768, 32768);
-
+*/
     system("PAUSE");
     return 0;
 }

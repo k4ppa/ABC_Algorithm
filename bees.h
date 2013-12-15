@@ -33,7 +33,7 @@ void employedPlacement(Bees bees, int);
 	float evaluateFitness(float position[]);
 
 
-void onLookerPlacement();
+void onlookerPlacement();
 	void generateEmployedP(Bees bees, int i);
 		float calcolateP(Bees bees, int i);
 	void chooseOnlookerPosition(Bees bees, int i);

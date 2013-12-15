@@ -56,7 +56,7 @@ void employedPlacement(Bees bees, int i)
 		
 			
 
-void onLookerPlacement(Bees bees, int i)
+void onlookerPlacement(Bees bees, int i)
 {
 	//generateEmployedP(bees, i);
 	if (isUnassignedOnlooker(bees, i))
@@ -111,6 +111,7 @@ void onLookerPlacement(Bees bees, int i)
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
 		{
 			setPosition(bees, i, getPosition(bees, selectedEmployed));
+			setFitness(bees, i, getFitness(bees, selectedEmployed));
 		}
 	
 
