@@ -39,7 +39,7 @@ void prindRandomValueBetweenRange(float min, float max)
 int main()
 {
     Bees bees = NULL;
-    int i;
+    int i, y;
         
     bees = (Bees) malloc(sizeof (struct bees));
 	srand(time(0));
@@ -58,11 +58,13 @@ int main()
 	printf("ONLOOKER PLACEMENT\n");
     printBees(bees);
 
-	for (i=0; i<SN; i++)
-		foodExploitation(bees, i);
-	printf("FOOD EXPLOITATION\n");
-	printBees(bees);
-
+	for (y=0; y<10; y++)
+	{
+		for (i=0; i<SN; i++)
+			foodExploitation(bees, i);
+		printf("FOOD EXPLOITATION %d\n", y);
+		printBees(bees);
+	}
 /*
 	prindRandomValueBetweenRange(-1, 1);
 	prindRandomValueBetweenRange(0, 1);
