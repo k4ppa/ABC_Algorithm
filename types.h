@@ -1,9 +1,6 @@
 #ifndef TYPES_H_
 #define TYPES_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #define BOOL int
 #define TRUE 1
 #define FALSE 0

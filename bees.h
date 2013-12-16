@@ -1,6 +1,7 @@
 #ifndef BEES_H_
 #define BEES_H_
 
+#include <stdlib.h>
 #include "types.h"
 #include "costant.h"
 #include "sphere.h"

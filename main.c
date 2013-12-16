@@ -1,30 +1,28 @@
+#include <time.h>
+//#include <stdio.h>
 #include "bees.h"
 #include "types.h"
-#include <time.h>
-
-void inizializeValues(float values[])
-{
-	int i;
-	for (i=0; i<D; i++)
-		values[i] = 0;
-}
-
-void printValues(float values[])
-{
-	int i;
-	for (i=0; i<D; i++)
-		printf("%f\t", values[i]);
-	printf("\n");
-}
 
 int main()
 {
-	Bees bees = NULL;
-	float values[D];
-	
-	inizializeValues(values);
-	printValues(values);
-	printf("f: %f\n", formulae(values));
+	Bees bees = (Bees) malloc(sizeof (struct bees));
+	int i, cycles;
+
+	srand(time(0));
+	for (i=0; i<D; i++)
+		initializeBees(bees);
+
+	for (i=0; i<D; i++)
+		employedPlacement(bees, i);
+
+	for (cycles=0; cycles<MAX_CYCLES; cycles++) 
+	{
+		for (i=0; i<D; i++)
+		{
+			onlookerPlacement(bees, i);
+			foodExploitation(bees, i);
+		}
+	}
 
 	system("PAUSE");
 	return 0;
