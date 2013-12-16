@@ -19,9 +19,8 @@ int main()
 	int i, cycles;
 
 	srand(time(0));
-	for (i=0; i<D; i++)
-		initializeBees(bees);
 
+	initializeBees(bees);
 	for (i=0; i<D; i++)
 		employedPlacement(bees, i);
 
