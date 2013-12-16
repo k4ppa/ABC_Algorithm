@@ -56,7 +56,7 @@ void employedPlacement(Bees bees, int i)
 		
 			
 
-void onLookerPlacement(Bees bees, int i)
+void onlookerPlacement(Bees bees, int i)
 {
 	//generateEmployedP(bees, i);
 	if (isUnassignedOnlooker(bees, i))
@@ -111,6 +111,7 @@ void onLookerPlacement(Bees bees, int i)
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
 		{
 			setPosition(bees, i, getPosition(bees, selectedEmployed));
+			setFitness(bees, i, getFitness(bees, selectedEmployed));
 		}
 	
 
@@ -177,13 +178,13 @@ void foodExploitation(Bees bees, int i)
 	{
 		float perturbedFitness = evaluateFitness(perturbedPosition);
 
-		if (isPerturbedFitnessIsBetter(bees, i, perturbedFitness))
+		if (isPerturbedFitnessBetter(bees, i, perturbedFitness))
 			replacePosition(bees, i, perturbedPosition, perturbedFitness);	
 		else
 			increaseTrial(bees, i);
 	}
 
-		BOOL isPerturbedFitnessIsBetter(Bees bees, int i, float perturbedFitness)
+		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
 		{
 			return getFitness(bees, i) > perturbedFitness;
 		}

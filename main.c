@@ -21,7 +21,7 @@ int main()
 {
 	Bees bees = NULL;
 	float values[D];
-	float a;
+	
 	inizializeValues(values);
 	printValues(values);
 	printf("f: %f\n", formulae(values));

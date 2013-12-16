@@ -38,7 +38,7 @@ void employedPlacement(Bees bees, int);
 	float evaluateFitness(float position[]);
 
 
-void onLookerPlacement();
+void onlookerPlacement(Bees bees, int i);
 	void generateEmployedP(Bees bees, int i);
 		float calcolateP(Bees bees, int i);
 	void chooseOnlookerPosition(Bees bees, int i);
@@ -55,7 +55,7 @@ void foodExploitation(Bees bees, int i);
 		int chooseIndex(int i);
 		void controlifExceedSearchField(float newPosition[], int y);
 	void chooseBestPosition(Bees bees, int i, float perturbedPosition[]);
-		BOOL isPerturbedFitnessIsBetter(Bees bees, int i, float perturbedFitness);
+		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness);
 		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness);
 		void increaseTrial(Bees bees, int i);
 	
