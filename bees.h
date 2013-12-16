@@ -59,6 +59,9 @@ void foodExploitation(Bees bees, int i);
 		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness);
 		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness);
 		void increaseTrial(Bees bees, int i);
+	void saveBestPosition(Bees bees, int i);
+		BOOL isNewPositionBetter(Bees bees, int i);
+		void changeBestPosition(Bees bees, int i);
 	
 
 void setType(Bees bees, int i, unsigned int newType);
