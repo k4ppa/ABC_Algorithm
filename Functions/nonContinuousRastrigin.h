@@ -4,7 +4,7 @@
 #define _USE_MATH_DEFINES
 
 #include <math.h>
-#include "costant.h"
+#include "../costant.h"
 
 #if FUNCTION == NON_CONTINUOUS_RASTRIGIN
 

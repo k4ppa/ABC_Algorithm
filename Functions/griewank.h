@@ -2,7 +2,7 @@
 #define GRIEWANK_H_
 
 #include <math.h>
-#include "costant.h"
+#include "../costant.h"
 
 #if FUNCTION == GRIEWANK
 

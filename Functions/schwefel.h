@@ -2,7 +2,7 @@
 #define SCHWEFEL_H_
 
 #include <math.h>
-#include "costant.h"
+#include "../costant.h"
 
 #if FUNCTION == SCHWEFEL
 

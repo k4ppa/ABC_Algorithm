@@ -17,6 +17,6 @@
 #define NON_CONTINUOUS_RASTRIGIN 7
 #define SCHWEFEL 8
 
-#define FUNCTION ACKLEY
+#define FUNCTION SPHERE
 
 #endif

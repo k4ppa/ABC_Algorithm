@@ -4,14 +4,14 @@
 #include <stdlib.h>
 #include "types.h"
 #include "costant.h"
-#include "sphere.h"
-#include "rosenbrock.h"
-#include "ackley.h"
-#include "griewank.h"
-#include "weierstrass.h"
-#include "rastrigin.h"
-#include "nonContinuousRastrigin.h"
-#include "schwefel.h"
+#include "Functions/sphere.h"
+#include "Functions/rosenbrock.h"
+#include "Functions/ackley.h"
+#include "Functions/griewank.h"
+#include "Functions/weierstrass.h"
+#include "Functions/rastrigin.h"
+#include "Functions/nonContinuousRastrigin.h"
+#include "Functions/schwefel.h"
 
 #define EMPLOYED 1
 #define ASSIGNED_ONLOOKER 2
