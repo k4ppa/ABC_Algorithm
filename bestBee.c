@@ -22,3 +22,18 @@ float *getBestPosition(BestBee bestBee)
 	return bestBee->bestPosition;
 }
 
+
+void setInizializedTrue(BestBee bestBee)
+{
+	bestBee->inizialized = TRUE;
+}
+
+void setInizializedFalse(BestBee bestBee)
+{
+	bestBee->inizialized = FALSE;
+}
+
+BOOL getInizialized(BestBee bestBee)
+{
+	return bestBee->inizialized;
+}
