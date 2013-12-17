@@ -122,8 +122,6 @@ void foodExploitation(Bees bees, int i)
 		resetBee(bees, i);
 	else
 		tryToFindBetterPosition(bees, i);
-
-	saveBestPosition(bees, i);
 }
 
 	BOOL hasExceededTheLimit(Bees bees, int i)
@@ -202,23 +200,4 @@ void foodExploitation(Bees bees, int i)
 		{
 			int trial = getTrial(bees, i);
 			setTrial(bees, i, trial+1);
-		}
-
-	void saveBestPosition(Bees bees, int i)
-	{
-		if (isNewPositionBetter(bees, i))
-			changeBestPosition(bees, i);
-	}
-
-		BOOL isNewPositionBetter(Bees bees, int i)
-		{
-			return bestBee.bestFitness > getFitness(bees, i);
-		}
-
-		void changeBestPosition(Bees bees, int i)
-		{
-			int y;
-			for (y=0; y<D; y++)
-				bestBee.bestPosition[y] = bees->positions[i][y];
-			bestBee.bestFitness = getFitness(bees, i);
 		}

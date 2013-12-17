@@ -19,10 +19,4 @@
 
 #define FUNCTION ACKLEY
 
-static struct BestBee
-	{
-		float bestPosition[D];
-		float bestFitness;
-	} bestBee;
-
 #endif
