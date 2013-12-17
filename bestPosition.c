@@ -5,10 +5,23 @@ void saveBestPosition(BestBee bestBee, Bees bees)
 	int i;
 	for (i=0; i<SN; i++)
 	{
-		if (isBeePositionBetter(bestBee, bees, i))
+		if (isAlreadyInizialized(bestBee))
+		{
+			if (isBeePositionBetter(bestBee, bees, i))
+				replaceBestPosition(bestBee, bees, i);
+		}
+		else
+		{
 			replaceBestPosition(bestBee, bees, i);
+			setInizializedTrue(bestBee);
+		}
 	}
 }
+
+	BOOL isAlreadyInizialized(BestBee bestBee)
+	{
+		return getInizialized(bestBee) == TRUE;
+	}
 
 	BOOL isBeePositionBetter(BestBee bestBee, Bees bees, int i)
 	{
