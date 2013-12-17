@@ -1,3 +1,6 @@
+#ifndef BESTBEE_H_
+#define BESTBEE_H_
+
 #include "costant.h"
 
 struct bestBee
@@ -11,3 +14,5 @@ void setBestFitness(BestBee bestBee, float newBestFitness);
 float getBestFitness(BestBee bestBee);
 void setBestPosition(BestBee bestBee, float newBestPosition[]);
 float *getBestPosition(BestBee bestBee);
+
+#endif
