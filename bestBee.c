@@ -5,7 +5,7 @@ void setBestFitness(BestBee bestBee, float newBestFitness)
 	bestBee->bestFitness = newBestFitness;
 }
 
-float getFitness(BestBee bestBee)
+float getBestFitness(BestBee bestBee)
 {
 	return bestBee->bestFitness;
 }
