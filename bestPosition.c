@@ -1,5 +1,9 @@
 #include "bestPosition.h"
 
+#if DEBUG == ENABLED
+#include "printBees.h"
+#endif
+
 void saveBestPosition(BestBee bestBee, Bees bees)
 {
 	int i;

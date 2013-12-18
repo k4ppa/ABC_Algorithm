@@ -6,13 +6,13 @@
 #include "bestPosition.h"
 #include "printBees.h"
 
-void beesSearch(Bees bees)
+void chooseBestEmployed(Bees bees)
 {
 	int i;
-	for (i=0; i<D; i++)
+	for (i=0; i<SN; i++)
 	{
 		onlookerPlacement(bees, i);
-		foodExploitation(bees, i);
+		printBees(bees);
 	}
 }
 
@@ -22,7 +22,6 @@ int main()
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
 	setInizializedFalse(bestBee);
-
 	srand(time(0));
 
 	initializeBees(bees);
@@ -31,11 +30,14 @@ int main()
 
 	for (cycles=0; cycles<MAX_CYCLES; cycles++) 
 	{
-		beesSearch(bees);
+		chooseBestEmployed(bees);
+		foodExploitation(bees, i);
+		printBees(bees);
 		saveBestPosition(bestBee, bees);
 	}
 
 	printBestBee(bestBee);
+
 	free(bees);
 	free(bestBee);
 	system("PAUSE");

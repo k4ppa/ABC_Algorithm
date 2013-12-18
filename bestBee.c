@@ -1,5 +1,9 @@
 #include "bestBee.h"
 
+#if DEBUG == ENABLED
+#include <stdio.h>
+#endif
+
 void setBestFitness(BestBee bestBee, float newBestFitness)
 {
 	bestBee->bestFitness = newBestFitness;
@@ -13,7 +17,7 @@ float getBestFitness(BestBee bestBee)
 void setBestPosition(BestBee bestBee, float newBestPosition[])
 {
 	int i;
-	for (i=0; i<D; i++)
+	for (i=0; i<D; i++) 
 		bestBee->bestPosition[i] = newBestPosition[i];
 }
 
