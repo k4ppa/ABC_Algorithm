@@ -189,7 +189,7 @@ void foodExploitation(Bees bees, int i)
 
 		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
 		{
-			return getFitness(bees, i) > perturbedFitness;
+			return getFitness(bees, i) < perturbedFitness;
 		}
 
 		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness)
