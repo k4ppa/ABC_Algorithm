@@ -23,6 +23,13 @@ void assignEmployed(Bees bees)
 	for (i=NUMBER_OF_ONLOOKER; i<SN; i++)
 	{
 		onlookerPlacement(bees, i);
+		dprintf("ONLOOKER PLACEMENT %d\n", i);
+		printBees(bees);
+	}
+	for (i=0; i<SN; i++)
+	{
+		foodExploitation(bees, i);
+		dprintf("GOOD EXPLOITATION %d\n", i);
 		printBees(bees);
 	}
 }
@@ -45,9 +52,9 @@ int main()
 	for (cycles=0; cycles<MAX_CYCLES; cycles++) 
 	{
 		assignEmployed(bees);
-		foodExploitation(bees, i);
-		printBees(bees);
+		//printBees(bees);
 		saveBestPosition(bestBee, bees);
+		printBestBee(bestBee);
 	}
 
 	printBestBee(bestBee);
