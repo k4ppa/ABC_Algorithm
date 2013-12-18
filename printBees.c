@@ -2,7 +2,7 @@
 
 void printBestBee(BestBee bestBee)
 {
-	dprintf("\tB\t*\t%f\n", getBestFitness(bestBee));
+	dprintf("\tB\t*\t%f\t%.2e\n", getBestFitness(bestBee), (1 / getBestFitness(bestBee)) - 1);
 	printPosition(getBestPosition(bestBee));
 }
 
