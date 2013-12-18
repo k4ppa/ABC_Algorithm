@@ -18,9 +18,13 @@ void chooseBestEmployed(Bees bees)
 
 int main()
 {
+	clock_t begin, end;
+	double time_spent;
 	int i, cycles;
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
+	
+	begin = clock();
 	setInizializedFalse(bestBee);
 	srand(time(0));
 
@@ -38,6 +42,9 @@ int main()
 
 	printBestBee(bestBee);
 
+	end = clock();
+	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+	printf("Time: %f sec\n", time_spent);
 	free(bees);
 	free(bestBee);
 	system("PAUSE");
