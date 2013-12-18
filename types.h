@@ -5,6 +5,17 @@
 #define TRUE 1
 #define FALSE 0
 
+#define ENABLED 1
+#define DISABLED 0
+
+#define DEBUG ENABLED
+
+#if DEBUG == ENABLED
+#define dprintf printf
+#else
+#define dprintf 0 && printf
+#endif
+
 struct twoBit
 {
      unsigned int bits: 2;
