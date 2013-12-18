@@ -6,10 +6,21 @@
 #include "bestPosition.h"
 #include "printBees.h"
 
+clock_t start()
+{
+	return clock();
+}
+
+void finish(clock_t begin)
+{
+	clock_t end = clock();
+	printf("Time: %f sec\n", (double)(end - begin) / CLOCKS_PER_SEC);
+}
+
 void chooseBestEmployed(Bees bees)
 {
 	int i;
-	for (i=0; i<SN; i++)
+	for (i=NUMBER_OF_ONLOOKER; i<SN; i++)
 	{
 		onlookerPlacement(bees, i);
 		printBees(bees);
@@ -18,18 +29,18 @@ void chooseBestEmployed(Bees bees)
 
 int main()
 {
-	clock_t begin, end;
-	double time_spent;
+	clock_t begin;
 	int i, cycles;
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
 	
-	begin = clock();
+	begin = start();
 	setInizializedFalse(bestBee);
+	initializeType(bees);
 	srand(time(0));
 
-	initializeBees(bees);
-	for (i=0; i<D; i++)
+	initializeType(bees);
+	for (i=0; i<NUMBER_OF_EMPLOYED; i++)
 		employedPlacement(bees, i);
 
 	for (cycles=0; cycles<MAX_CYCLES; cycles++) 
@@ -42,9 +53,7 @@ int main()
 
 	printBestBee(bestBee);
 
-	end = clock();
-	time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Time: %f sec\n", time_spent);
+	finish(begin);
 	free(bees);
 	free(bestBee);
 	system("PAUSE");
