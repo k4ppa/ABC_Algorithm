@@ -28,7 +28,7 @@ struct bees
 typedef struct bees *Bees;
 
 
-void initializeBees(Bees bees);
+void initializeType(Bees bees);
 	void chooseBeeType(Bees bees, int i);
 			
 

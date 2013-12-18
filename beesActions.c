@@ -1,6 +1,6 @@
 #include "bees.h"
 
-void initializeBees(Bees bees)
+void initializeType(Bees bees)
 {
 	int i;
 	for (i=0; i<SN; i++)
