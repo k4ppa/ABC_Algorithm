@@ -1,38 +1,41 @@
 #include <time.h>
-//#include <stdio.h>
 #include "types.h"
 #include "bees.h"
 #include "bestBee.h"
 #include "bestPosition.h"
 #include "printBees.h"
+#include "timer.h"
 
-clock_t start()
+void assignEmployed(Bees bees);
+void beesSearch(Bees bees);
+
+void beesWork(Bees bees)
 {
-	return clock();
+	assignEmployed(bees);
+	beesSearch(bees);
 }
 
-void finish(clock_t begin)
-{
-	clock_t end = clock();
-	printf("Time: %f sec\n", (double)(end - begin) / CLOCKS_PER_SEC);
-}
-
-void assignEmployed(Bees bees)
-{
-	int i;
-	for (i=NUMBER_OF_ONLOOKER; i<SN; i++)
+	void assignEmployed(Bees bees)
 	{
-		onlookerPlacement(bees, i);
-		dprintf("ONLOOKER PLACEMENT %d\n", i);
-		printBees(bees);
+		int i;
+		for (i=NUMBER_OF_ONLOOKER; i<SN; i++)
+		{
+			onlookerPlacement(bees, i);
+			dprintf("ONLOOKER PLACEMENT %d\n", i);
+			printBees(bees);
+		}
 	}
-	for (i=0; i<SN; i++)
+
+	void beesSearch(Bees bees)
 	{
-		foodExploitation(bees, i);
-		dprintf("GOOD EXPLOITATION %d\n", i);
-		printBees(bees);
+		int i;
+		for (i=0; i<SN; i++)
+		{
+			foodExploitation(bees, i);
+			dprintf("FOOD EXPLOITATION %d\n", i);
+			printBees(bees);
+		}
 	}
-}
 
 int main()
 {
@@ -41,8 +44,8 @@ int main()
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
 	
-	begin = start();
 	srand(time(0));
+	begin = startTimer();
 
 	setInizializedFalse(bestBee);
 	initializeType(bees);
@@ -51,15 +54,15 @@ int main()
 
 	for (cycles=0; cycles<MAX_CYCLES; cycles++) 
 	{
-		assignEmployed(bees);
+		beesWork(bees);
 		//printBees(bees);
 		saveBestPosition(bestBee, bees);
 		printBestBee(bestBee);
 	}
 
-	printBestBee(bestBee);
+	//printBestBee(bestBee);
 
-	finish(begin);
+	finishTimer(begin);
 	free(bees);
 	free(bestBee);
 	system("PAUSE");
