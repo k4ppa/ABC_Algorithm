@@ -35,6 +35,25 @@ void beesWork(Bees bees)
 			dprintf("FOOD EXPLOITATION %d\n", i);
 			printBees(bees);
 		}
+		
+	}
+
+	void prova()
+	{
+		double positions[D], result;
+		int y, i;
+		//for (i=0; i<MAX_CYCLES; i++) {
+			//for (y=0; y<D; y++)
+				//positions[y] = chooseRandomValueBetweenRange(MIN_SEARCH_RANGE, MAX_SEARCH_RANGE);
+			positions[0] = 0.000000007884737;
+			positions[1] = 0.000000002815446;
+			positions[2] = 0.000000004996968;
+			result = evaluateFitness(positions);
+			if (result == 1.0)
+				printf(":( %Le\n", result);
+			else
+				printf("OK\n");
+		//}
 	}
 
 int main()
@@ -43,8 +62,8 @@ int main()
 	int i, cycles;
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
-	
-	srand(time(0));
+	prova();
+	/*srand(time(0));
 	begin = startTimer();
 
 	setInizializedFalse(bestBee);
@@ -57,12 +76,12 @@ int main()
 		beesWork(bees);
 		//printBees(bees);
 		saveBestPosition(bestBee, bees);
-		printBestBee(bestBee);
+		//printBestBee(bestBee);
 	}
 
-	//printBestBee(bestBee);
+	printBestBee(bestBee);
 
-	finishTimer(begin);
+	finishTimer(begin);*/
 	free(bees);
 	free(bestBee);
 	system("PAUSE");

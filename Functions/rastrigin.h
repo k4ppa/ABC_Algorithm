@@ -8,10 +8,10 @@
 
 #if FUNCTION == RASTRIGIN
 
-	#define MIN_SEARCH_RANGE -5.12f
-	#define MAX_SEARCH_RANGE 5.12f
+	#define MIN_SEARCH_RANGE -5.12
+	#define MAX_SEARCH_RANGE 5.12
 
-	float formulae(float values[]);
+	double formulae(double values[]);
 
 #endif
 #endif

@@ -8,12 +8,12 @@
 
 #if FUNCTION == NON_CONTINUOUS_RASTRIGIN
 
-	#define MIN_SEARCH_RANGE -5.12f
-	#define MAX_SEARCH_RANGE 5.12f
+	#define MIN_SEARCH_RANGE -5.12
+	#define MAX_SEARCH_RANGE 5.12
 
-	float formulae(float values[]);
-		float calculateValue(float value);
-			int round(float number);
+	double formulae(double values[]);
+		double calculateValue(double value);
+			int round(double number);
 
 #endif
 #endif

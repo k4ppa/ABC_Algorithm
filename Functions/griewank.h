@@ -9,9 +9,9 @@
 	#define MIN_SEARCH_RANGE -600.0
 	#define MAX_SEARCH_RANGE 600.0
 
-	float formulae(float values[]);
-		float calculateSummation(float values[]);
-		float calculateProductsOfSequences(float values[]);
+	double formulae(double values[]);
+		double calculateSummation(double values[]);
+		double calculateProductsOfSequences(double values[]);
 
 #endif
 #endif

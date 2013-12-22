@@ -4,24 +4,24 @@
 #include <stdio.h>
 #endif
 
-void setBestFitness(BestBee bestBee, float newBestFitness)
+void setBestFitness(BestBee bestBee, double newBestFitness)
 {
 	bestBee->bestFitness = newBestFitness;
 }
 
-float getBestFitness(BestBee bestBee)
+double getBestFitness(BestBee bestBee)
 {
 	return bestBee->bestFitness;
 }
 
-void setBestPosition(BestBee bestBee, float newBestPosition[])
+void setBestPosition(BestBee bestBee, double newBestPosition[])
 {
 	int i;
 	for (i=0; i<D; i++) 
 		bestBee->bestPosition[i] = newBestPosition[i];
 }
 
-float *getBestPosition(BestBee bestBee)
+double *getBestPosition(BestBee bestBee)
 {
 	return bestBee->bestPosition;
 }

@@ -2,18 +2,18 @@
 
 #if FUNCTION == SCHWEFEL
 
-float formulae(float values[])
+double formulae(double values[])
 {
-	return 418.9829f * D - calculation(values);
+	return 418.9829 * D - calculation(values);
 }
 
-	float calculation(float values[])
+	double calculation(double values[])
 	{
-		float result = 0.0;
+		double result = 0.0;
 		int i;
 
 		for (i=0; i<D; i++)
-			result = result + values[i] * sinf(sqrtf(fabs(values[i])));
+			result = result + values[i] * sin(sqrt(abs(values[i])));
 		return result;
 	}
 

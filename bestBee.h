@@ -6,16 +6,16 @@
 
 struct bestBee
 {
-	float bestPosition[D];
-	float bestFitness;
+	double bestPosition[D];
+	double bestFitness;
 	BOOL inizialized;
 };
 typedef struct bestBee *BestBee;
 
-void setBestFitness(BestBee bestBee, float newBestFitness);
-float getBestFitness(BestBee bestBee);
-void setBestPosition(BestBee bestBee, float newBestPosition[]);
-float *getBestPosition(BestBee bestBee);
+void setBestFitness(BestBee bestBee, double newBestFitness);
+double getBestFitness(BestBee bestBee);
+void setBestPosition(BestBee bestBee, double newBestPosition[]);
+double *getBestPosition(BestBee bestBee);
 void setInizializedTrue(BestBee bestBee);
 void setInizializedFalse(BestBee bestBee);
 BOOL getInizialized(BestBee bestBee);

@@ -8,7 +8,7 @@
 #define ENABLED 1
 #define DISABLED 0
 
-#define DEBUG ENABLED
+#define DEBUG DISABLED
 
 #if DEBUG == ENABLED
 #define dprintf printf

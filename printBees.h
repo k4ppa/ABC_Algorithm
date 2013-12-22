@@ -4,4 +4,4 @@
 
 void printBestBee(BestBee bestBee);
 void printBees(Bees bees);
-void printPosition(float position[]);
+void printPosition(double position[]);

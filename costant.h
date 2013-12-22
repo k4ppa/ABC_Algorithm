@@ -1,12 +1,12 @@
 #ifndef COSTANT_H_
 #define COSTANT_H_
 
-#define SN 4
-#define NUMBER_OF_EMPLOYED 2
+#define SN 10
+#define NUMBER_OF_EMPLOYED SN/2
 #define NUMBER_OF_ONLOOKER SN-NUMBER_OF_EMPLOYED
 #define D 3
-#define LIMIT 3
-#define MAX_CYCLES 1000
+#define LIMIT 200
+#define MAX_CYCLES 30000
 
 #define SPHERE 1
 #define ROSENBROCK 2

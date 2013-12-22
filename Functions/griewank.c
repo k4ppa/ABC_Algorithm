@@ -2,31 +2,31 @@
 
 #if FUNCTION == GRIEWANK
 
-float formulae(float values[])
+double formulae(double values[])
 {
-	float result;
+	double result;
 	result = calculateSummation(values) / 4000;
 	result = result - calculateProductsOfSequences(values);
 	return result + 1;
 }
 
-	float calculateSummation(float values[])
+	double calculateSummation(double values[])
 	{
-		float result = 0.0;
+		double result = 0.0;
 		int i;
 		for (i=0; i<D; i++)
-			result = result + powf(values[i], 2);
+			result = result + pow(values[i], 2);
 		return result;
 	}
 
-	float calculateProductsOfSequences(float values[])
+	double calculateProductsOfSequences(double values[])
 	{
-		float result = 1.0;
-		float partialResult;
+		double result = 1.0;
+		double partialResult;
 		int i;
 		for (i=0; i<D; i++) {
-			partialResult = values[i] / sqrtf((float) i+1);
-			result = result * cosf(partialResult);
+			partialResult = values[i] / sqrt((double) i+1);
+			result = result * cos(partialResult);
 		}
 		return result;
 	}

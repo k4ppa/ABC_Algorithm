@@ -2,9 +2,9 @@
 
 #if FUNCTION == SPHERE
 
-float formulae(float values[])
+double formulae(double values[])
 {
-	float result = 0.0;
+	double result = 0.0;
 	int i;
 
 	for (i=0; i<D; i++)
