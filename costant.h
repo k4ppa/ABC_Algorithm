@@ -7,6 +7,8 @@
 #define D 3
 #define LIMIT 3
 #define MAX_CYCLES 1000
+#define TOURNAMENT_SIZE_RATE 20
+#define calcolateTournamentSize() (((NUMBER_OF_EMPLOYED / 100) * TOURNAMENT_SIZE_RATE) < 1? 1 : ((NUMBER_OF_EMPLOYED / 100) * TOURNAMENT_SIZE_RATE))
 
 #define SPHERE 1
 #define ROSENBROCK 2

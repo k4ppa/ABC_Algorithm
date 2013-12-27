@@ -51,13 +51,10 @@ void employedPlacement(Bees bees, int i)
 
 	float evaluateFitness(float position[])
 	{
-		float fitness = formulae(position);
-		if (fitness >= 0)
-			return 1 / (1 + fitness);
-		return 1 + fabs(fitness);
+		return formulae(position);
 	}
 		
-			
+		
 
 void onlookerPlacement(Bees bees, int i)
 {
@@ -109,6 +106,15 @@ void onlookerPlacement(Bees bees, int i)
 					return y;
 			}
 			return 0;
+		}
+
+		int tournamentEmployedSelection(Bees bees)
+		{
+			int tournamentIndex[calcolateTournamentSize()];
+			
+			int i;
+			for (i=0; i<calcolateTournamentSize(); i++)
+				tournamentIndex[i] = (rand() % (NUMBER_OF_EMPLOYED - 0)) + 0;
 		}
 
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
