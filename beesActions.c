@@ -119,21 +119,21 @@ void onlookerPlacement(Bees bees, int i)
 			return winnerTournament(bees, tournamentIndex);
 		}
 
-		int winnerTournament(Bees bees, int tournamentIndex[])
-		{
-			int i;
-			int winnerBee = tournamentIndex[0];
-			float winnerFitness = getFitness(bees, tournamentIndex[0]);
-			for (i=1; i<calcolateTournamentSize(); i++)
+			int winnerTournament(Bees bees, int tournamentIndex[])
 			{
-				if (getFitness(bees, tournamentIndex[i]) < winnerFitness)
+				int i;
+				int winnerBee = tournamentIndex[0];
+				float winnerFitness = getFitness(bees, tournamentIndex[0]);
+				for (i=1; i<calcolateTournamentSize(); i++)
 				{
-					winnerFitness = getFitness(bees, tournamentIndex[i]);
-					winnerBee = tournamentIndex[i];
+					if (getFitness(bees, tournamentIndex[i]) < winnerFitness)
+					{
+						winnerFitness = getFitness(bees, tournamentIndex[i]);
+						winnerBee = tournamentIndex[i];
+					}
 				}
+				return winnerBee;
 			}
-			return winnerBee;
-		}
 
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
 		{
@@ -213,7 +213,7 @@ void foodExploitation(Bees bees, int i)
 
 		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
 		{
-			return getFitness(bees, i) < perturbedFitness;
+			return getFitness(bees, i) > perturbedFitness;
 		}
 
 		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness)

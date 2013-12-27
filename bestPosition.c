@@ -35,7 +35,7 @@ void saveBestPosition(BestBee bestBee, Bees bees)
 
 		BOOL isBeePositionBetter(BestBee bestBee, Bees bees, int i)
 		{
-			return getBestFitness(bestBee) < getFitness(bees, i);
+			return getBestFitness(bestBee) > getFitness(bees, i);
 		}
 
 void replaceBestPosition(BestBee bestBee, Bees bees, int i)

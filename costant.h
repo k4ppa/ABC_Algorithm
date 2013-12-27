@@ -1,13 +1,13 @@
 #ifndef COSTANT_H_
 #define COSTANT_H_
 
-#define SN 4
-#define NUMBER_OF_EMPLOYED 2
+#define SN 20
+#define NUMBER_OF_EMPLOYED 10
 #define NUMBER_OF_ONLOOKER SN-NUMBER_OF_EMPLOYED
 #define D 3
 #define LIMIT 3
 #define MAX_CYCLES 1000
-#define TOURNAMENT_SIZE_RATE 20
+#define TOURNAMENT_SIZE_RATE 30
 #define calcolateTournamentSize() (((NUMBER_OF_EMPLOYED / 100) * TOURNAMENT_SIZE_RATE) < 1? 1 : ((NUMBER_OF_EMPLOYED / 100) * TOURNAMENT_SIZE_RATE))
 
 #define SPHERE 1
