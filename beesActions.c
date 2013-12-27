@@ -91,7 +91,7 @@ void onlookerPlacement(Bees bees, int i)
 
 	void chooseOnlookerPosition(Bees bees, int i)
 	{
-		int selectedEmployed = rouletteWheelEmployedSelection(bees);
+		int selectedEmployed = tournamentEmployedSelection(bees);
 		moveOnlookerInPosition(bees, i, selectedEmployed);
 	}
 
@@ -111,10 +111,28 @@ void onlookerPlacement(Bees bees, int i)
 		int tournamentEmployedSelection(Bees bees)
 		{
 			int tournamentIndex[calcolateTournamentSize()];
-			
 			int i;
+			
 			for (i=0; i<calcolateTournamentSize(); i++)
 				tournamentIndex[i] = (rand() % (NUMBER_OF_EMPLOYED - 0)) + 0;
+
+			return winnerTournament(bees, tournamentIndex);
+		}
+
+		int winnerTournament(Bees bees, int tournamentIndex[])
+		{
+			int i;
+			int winnerBee = tournamentIndex[0];
+			float winnerFitness = getFitness(bees, tournamentIndex[0]);
+			for (i=1; i<calcolateTournamentSize(); i++)
+			{
+				if (getFitness(bees, tournamentIndex[i]) < winnerFitness)
+				{
+					winnerFitness = getFitness(bees, tournamentIndex[i]);
+					winnerBee = tournamentIndex[i];
+				}
+			}
+			return winnerBee;
 		}
 
 		void moveOnlookerInPosition(Bees bees, int i, int selectedEmployed)
@@ -122,8 +140,8 @@ void onlookerPlacement(Bees bees, int i)
 			setPosition(bees, i, getPosition(bees, selectedEmployed));
 			setFitness(bees, i, getFitness(bees, selectedEmployed));
 		}
-	
 
+	
 
 void foodExploitation(Bees bees, int i)
 {
