@@ -21,7 +21,7 @@ void printBees(Bees bees)
 	dprintf("--------------------------------------------------------------------------------\n");
 }
 
-void printPosition(float position[])
+void printPosition(double position[])
 {
 	int y;
 	for(y=0; y<D; y++)

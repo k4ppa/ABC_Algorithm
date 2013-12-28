@@ -2,17 +2,17 @@
 
 #if FUNCTION == RASTRIGIN
 
-float formulae(float values[])
+double formulae(double values[])
 {
-	float result = 0.0;
-	float partialResult;
+	double result = 0.0;
+	double partialResult;
 	int i;
 
 	for (i=0; i<D; i++)
 	{
-		partialResult = 2 * (float) M_PI * values[i];
-		partialResult = 10 * cosf(partialResult);
-		result = result + powf(values[i], 2) - partialResult + 10;
+		partialResult = 2 * M_PI * values[i];
+		partialResult = 10 * cos(partialResult);
+		result = result + pow(values[i], 2) - partialResult + 10;
 	}
 	return result;
 }

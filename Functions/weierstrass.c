@@ -2,16 +2,16 @@
 
 #if FUNCTION == WEIERSTRASS
 
-float formulae(float values[])
+double formulae(double values[])
 {
 	
 	return firstCalculation(values) - (D * secondCalculation());
 }
 
-	float firstCalculation(float values[])
+	double firstCalculation(double values[])
 	{
-		float result = 0.0;
-		float num;
+		double result = 0.0;
+		double num;
 		int i;
 		for (i=0; i<D; i++)
 		{
@@ -21,23 +21,23 @@ float formulae(float values[])
 		return result;
 	}
 
-	float secondCalculation()
+	double secondCalculation()
 	{
 		return calcolateSummation(0.5);
 	}
 
-	float calcolateSummation(float num)
+	double calcolateSummation(double num)
 	{
-		float result = 0.0;
-		float partialResult;
-		float a = 0.5;
-		float b = 3.0;
+		double result = 0.0;
+		double partialResult;
+		double a = 0.5;
+		double b = 3.0;
 		int k;
 		int kMax = 20;
 
 		for (k=0; k<kMax; k++) {
-			partialResult = 2 * (float) M_PI * powf(b, k) * num;
-			result = result + (powf(a, k) * cosf(partialResult));
+			partialResult = 2 * M_PI * pow(b, k) * num;
+			result = result + (pow(a, k) * cos(partialResult));
 		}
 		return result;
 	}

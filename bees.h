@@ -20,9 +20,9 @@
 struct bees
 {
 	Flag type[SN];
-	float positions[SN][D];
-	float fitness[SN];
-	float p[NUMBER_OF_EMPLOYED];
+	double positions[SN][D];
+	double fitness[SN];
+	double p[NUMBER_OF_EMPLOYED];
 	int trial[SN];
 };
 typedef struct bees *Bees;
@@ -35,13 +35,13 @@ void initializeType(Bees bees);
 void employedPlacement(Bees bees, int);
 	BOOL isEmployed(Bees bees, int i);
 	void generateNewPosition(Bees bees, int i);
-		float chooseRandomValueBetweenRange(float lowerBound, float upperBound);
-	float evaluateFitness(float position[]);
+		double chooseRandomValueBetweenRange(double lowerBound, double upperBound);
+	double evaluateFitness(double position[]);
 
 
 void onlookerPlacement(Bees bees, int i);
 	void generateEmployedP(Bees bees, int i);
-		float calcolateP(Bees bees, int i);
+		double calcolateP(Bees bees, int i);
 	void chooseOnlookerPosition(Bees bees, int i);
 		int rouletteWheelEmployedSelection(Bees bees);
 		int tournamentEmployedSelection(Bees bees);
@@ -54,12 +54,12 @@ void foodExploitation(Bees bees, int i);
 	BOOL hasExceededTheLimit(Bees bees, int i);
 	void resetBee(Bees bees, int i);
 	void tryToFindBetterPosition(Bees bees, int i);
-	void generatePerturbedPosition(Bees bees, int i, float perturbedPosition[]);
+	void generatePerturbedPosition(Bees bees, int i, double perturbedPosition[]);
 		int chooseIndex(int i);
-		void controlifExceedSearchField(float newPosition[], int y);
-	void chooseBestPosition(Bees bees, int i, float perturbedPosition[]);
-		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness);
-		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness);
+		void controlifExceedSearchField(double newPosition[], int y);
+	void chooseBestPosition(Bees bees, int i, double perturbedPosition[]);
+		BOOL isPerturbedFitnessBetter(Bees bees, int i, double perturbedFitness);
+		void replacePosition(Bees bees, int i, double perturbedPosition[], double perturbedFitness);
 		void increaseTrial(Bees bees, int i);
 	
 
@@ -67,12 +67,12 @@ void setType(Bees bees, int i, unsigned int newType);
 unsigned int getType(Bees bees, int i);
 void setTrial(Bees bees, int i, int newTrial);
 int getTrial(Bees bees, int i);
-void setFitness(Bees bees, int i, float newFitness);
-float getFitness(Bees bees, int i);
-void setP(Bees bees, int i, float newP);
-float getP(Bees bees, int i);
-void setPosition(Bees bees, int i, float newPosition[]);
-float *getPosition(Bees bees, int i);
+void setFitness(Bees bees, int i, double newFitness);
+double getFitness(Bees bees, int i);
+void setP(Bees bees, int i, double newP);
+double getP(Bees bees, int i);
+void setPosition(Bees bees, int i, double newPosition[]);
+double *getPosition(Bees bees, int i);
 			
 
 #endif

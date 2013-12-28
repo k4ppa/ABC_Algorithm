@@ -2,31 +2,31 @@
 
 #if FUNCTION == ACKLEY
 
-float formulae(float values[])
+double formulae(double values[])
 {	
-	return firstCalculation(values) - secondCalculation(values) + 20 + (float) M_E;
+	return firstCalculation(values) - secondCalculation(values) + 20 + M_E;
 }
 
-	float firstCalculation(float values[])
+	double firstCalculation(double values[])
 	{
-		float partialResult = 0.0;
+		double partialResult = 0.0;
 		int i;
 
 		for (i=0; i<D; i++)
-			partialResult = partialResult + (powf(values[i], 2));
-		partialResult = -0.2f * sqrtf(partialResult / D);
-		partialResult = -20 * expf(partialResult);
+			partialResult = partialResult + (pow(values[i], 2));
+		partialResult = -0.2f * sqrt(partialResult / D);
+		partialResult = -20 * exp(partialResult);
 		return partialResult;
 	}
 
-	float secondCalculation(float values[])
+	double secondCalculation(double values[])
 	{
-		float result = 0.0;
+		double result = 0.0;
 		int i;
 
 		for (i=0; i<D; i++)
 			result = result + (cosf(2 * M_PI * values[i]));
-		return expf(result / D);
+		return exp(result / D);
 	}
 
 #endif

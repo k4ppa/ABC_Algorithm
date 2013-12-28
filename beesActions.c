@@ -19,7 +19,7 @@ void initializeType(Bees bees)
 
 void employedPlacement(Bees bees, int i)
 {
-	float fitness;
+	double fitness;
 	if (isEmployed(bees, i)) 
 	{
 		generateNewPosition(bees, i);
@@ -42,14 +42,14 @@ void employedPlacement(Bees bees, int i)
 			bees->positions[i][y] = chooseRandomValueBetweenRange(MIN_SEARCH_RANGE, MAX_SEARCH_RANGE);
 	}
 
-		float chooseRandomValueBetweenRange(float lowerBound, float upperBound)
+		double chooseRandomValueBetweenRange(double lowerBound, double upperBound)
 		{
-			float random = ((float) rand()) / (float) RAND_MAX;
-			float range = upperBound - lowerBound;
+			double random = ((double) rand()) / (double) RAND_MAX;
+			double range = upperBound - lowerBound;
 			return lowerBound + (random * range);
 		}
 
-	float evaluateFitness(float position[])
+	double evaluateFitness(double position[])
 	{
 		return formulae(position);
 	}
@@ -69,15 +69,15 @@ void onlookerPlacement(Bees bees, int i)
 
 	void generateEmployedP(Bees bees, int i)
 	{
-		float newP;
+		double newP;
 		if (isEmployed(bees, i)) 
 			newP = calcolateP(bees, i);
 			setP(bees, i, newP);
 	}
 	
-		float calcolateP(Bees bees, int i)
+		double calcolateP(Bees bees, int i)
 		{
-			float fitnessSummation = 0.0;
+			double fitnessSummation = 0.0;
 			int y;
 			for (y=0; y<NUMBER_OF_EMPLOYED; y++)
 				fitnessSummation = fitnessSummation + getFitness(bees, i);
@@ -97,7 +97,7 @@ void onlookerPlacement(Bees bees, int i)
 
 		int rouletteWheelEmployedSelection(Bees bees)
 		{
-			float totalFitness = getFitness(bees, 0);
+			double totalFitness = getFitness(bees, 0);
 			int y;
 			for (y=1; y<NUMBER_OF_EMPLOYED; y++)
 			{
@@ -123,7 +123,7 @@ void onlookerPlacement(Bees bees, int i)
 			{
 				int i;
 				int winnerBee = tournamentIndex[0];
-				float winnerFitness = getFitness(bees, tournamentIndex[0]);
+				double winnerFitness = getFitness(bees, tournamentIndex[0]);
 				for (i=1; i<calcolateTournamentSize(); i++)
 				{
 					if (getFitness(bees, tournamentIndex[i]) < winnerFitness)
@@ -167,12 +167,12 @@ void foodExploitation(Bees bees, int i)
 
 	void tryToFindBetterPosition(Bees bees, int i)
 	{
-		float perturbedPosition[D];
+		double perturbedPosition[D];
 		generatePerturbedPosition(bees, i, perturbedPosition);
 		chooseBestPosition(bees, i, perturbedPosition);
 	}
 
-	void generatePerturbedPosition(Bees bees, int i, float perturbedPosition[])
+	void generatePerturbedPosition(Bees bees, int i, double perturbedPosition[])
 	{
 		int y, k;
 		for (y=0; y<D; y++)
@@ -193,7 +193,7 @@ void foodExploitation(Bees bees, int i)
 			return index;
 		}
 
-		void controlifExceedSearchField(float newPosition[], int y)
+		void controlifExceedSearchField(double newPosition[], int y)
 		{
 			if (newPosition[y] > MAX_SEARCH_RANGE)
 				newPosition[y] = MAX_SEARCH_RANGE;
@@ -201,9 +201,9 @@ void foodExploitation(Bees bees, int i)
 				newPosition[y] = MIN_SEARCH_RANGE;
 		}
 
-	void chooseBestPosition(Bees bees, int i, float perturbedPosition[])
+	void chooseBestPosition(Bees bees, int i, double perturbedPosition[])
 	{
-		float perturbedFitness = evaluateFitness(perturbedPosition);
+		double perturbedFitness = evaluateFitness(perturbedPosition);
 
 		if (isPerturbedFitnessBetter(bees, i, perturbedFitness))
 			replacePosition(bees, i, perturbedPosition, perturbedFitness);	
@@ -211,12 +211,12 @@ void foodExploitation(Bees bees, int i)
 			increaseTrial(bees, i);
 	}
 
-		BOOL isPerturbedFitnessBetter(Bees bees, int i, float perturbedFitness)
+		BOOL isPerturbedFitnessBetter(Bees bees, int i, double perturbedFitness)
 		{
 			return getFitness(bees, i) > perturbedFitness;
 		}
 
-		void replacePosition(Bees bees, int i, float perturbedPosition[], float perturbedFitness)
+		void replacePosition(Bees bees, int i, double perturbedPosition[], double perturbedFitness)
 		{
 			setPosition(bees, i, perturbedPosition);
 			setFitness(bees, i, perturbedFitness);

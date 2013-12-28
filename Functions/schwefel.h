@@ -9,8 +9,8 @@
 	#define MIN_SEARCH_RANGE -500.0
 	#define MAX_SEARCH_RANGE 500.0
 
-	float formulae(float values[]);
-		float calculation(float values[]);
+	double formulae(double values[]);
+		double calculation(double values[]);
 
 #endif
 #endif
