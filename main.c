@@ -57,10 +57,10 @@ int main()
 		beesWork(bees);
 		//printBees(bees);
 		saveBestPosition(bestBee, bees);
-		printBestBee(bestBee);
+		//printBestBee(bestBee);
 	}
 
-	//printBestBee(bestBee);
+	printBestBee(bestBee);
 
 	finishTimer(begin);
 	free(bees);
