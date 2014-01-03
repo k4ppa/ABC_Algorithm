@@ -19,22 +19,20 @@ void beesWork(Bees bees)
 	{
 		int i;
 		for (i=NUMBER_OF_ONLOOKER; i<SN; i++)
-		{
 			onlookerPlacement(bees, i);
-			dprintf("ONLOOKER PLACEMENT %d\n", i);
-			printBees(bees);
-		}
+
+		dprintf("ONLOOKER PLACEMENT %d\n", i);
+		printBees(bees);
 	}
 
 	void beesSearch(Bees bees)
 	{
 		int i;
 		for (i=0; i<SN; i++)
-		{
 			foodExploitation(bees, i);
-			dprintf("FOOD EXPLOITATION %d\n", i);
-			printBees(bees);
-		}
+		
+		dprintf("FOOD EXPLOITATION %d\n", i);
+		printBees(bees);
 	}
 
 int main()
