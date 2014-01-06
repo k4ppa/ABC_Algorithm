@@ -3,7 +3,7 @@
 void printBestBee(BestBee bestBee)
 {
 	int y;
-	printf("\tB\t*\t%e\t%e\n", getBestFitness(bestBee), (1 / getBestFitness(bestBee)) - 1);
+	printf("\tB\t*\t%e\t%e\n", getBestFitness(bestBee), getBestFitness(bestBee));
 	for(y=0; y<D; y++)
 		printf("%e\t", bestBee->bestPosition[y]);
 	printf("\n");
