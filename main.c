@@ -38,32 +38,14 @@ void beesWork(Bees bees)
 		
 	}
 
-	void prova()
-	{
-		double positions[D], result;
-		int y, i;
-		//for (i=0; i<MAX_CYCLES; i++) {
-			//for (y=0; y<D; y++)
-				//positions[y] = chooseRandomValueBetweenRange(MIN_SEARCH_RANGE, MAX_SEARCH_RANGE);
-			positions[0] = 0.000000007884737;
-			positions[1] = 0.000000002815446;
-			positions[2] = 0.000000004996968;
-			result = evaluateFitness(positions);
-			if (result == 1.0)
-				printf(":( %Le\n", result);
-			else
-				printf("OK\n");
-		//}
-	}
-
 int main()
 {
 	clock_t begin;
 	int i, cycles;
 	Bees bees = (Bees) malloc(sizeof (struct bees));
 	BestBee bestBee = (BestBee) malloc(sizeof (struct bestBee));
-	prova();
-	/*srand(time(0));
+	
+	srand(time(0));
 	begin = startTimer();
 
 	setInizializedFalse(bestBee);
@@ -81,7 +63,7 @@ int main()
 
 	printBestBee(bestBee);
 
-	finishTimer(begin);*/
+	finishTimer(begin);
 	free(bees);
 	free(bestBee);
 	system("PAUSE");

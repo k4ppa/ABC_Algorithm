@@ -51,14 +51,10 @@ void employedPlacement(Bees bees, int i)
 
 	double evaluateFitness(double position[])
 	{
-		double f = formulae(position);
-		if (f >= 0.0)
-		{
-			double asd =  + f;
-			printf("EVALUATE f: %.50Lf, fit: %.50Lf\n\n", f, asd);
-			return 1.0f / (1.0f + f);
-		}
-		return 1 + abs(f);
+		double fitness = formulae(position);
+		if (fitness >= 0)
+			return 1.0 / (1.0 + fitness);
+		return 1.0 + abs(fitness);
 	}
 		
 			
