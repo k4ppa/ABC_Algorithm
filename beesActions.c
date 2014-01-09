@@ -51,9 +51,31 @@ void employedPlacement(Bees bees, int i)
 
 	float evaluateFitness(float position[])
 	{
+		char stringFitness[28];
+		mpf_t mpfFitness, one;
+		float ris;
 		float fitness = formulae(position);
-		if (fitness >= 0)
-			return 1 / (1 + fitness);
+		if (fitness >= 0) 
+		{
+			sprintf(stringFitness, "%.20f", fitness);
+			mpf_init(mpfFitness);
+			mpf_init(one);
+			
+			mpf_set_str (one, "1.0", 10);
+			mpf_set_str(mpfFitness, stringFitness, 10);
+			
+			mpf_add(mpfFitness, mpfFitness, one);
+			//printf("fitness: %.20e\t", fitness);
+			//mpf_out_str (stdout, 10, 256, mpfFitness);
+			mpf_div(mpfFitness, one, mpfFitness);			
+			
+			printf("\nris %.20e\t", (float) mpf_get_d(mpfFitness));
+			ris = (float) mpf_get_d(mpfFitness);
+			mpf_out_str (stdout, 10, 256, mpfFitness);
+			printf("\n");
+			return ris;
+			//return 1 / (1 + fitness);
+		}
 		return 1 + fabs(fitness);
 	}
 		

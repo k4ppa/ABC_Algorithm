@@ -2,8 +2,10 @@
 #define BEES_H_
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "types.h"
 #include "costant.h"
+#include "mpir.h"
 #include "Functions/sphere.h"
 #include "Functions/rosenbrock.h"
 #include "Functions/ackley.h"
