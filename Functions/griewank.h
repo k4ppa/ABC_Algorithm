@@ -3,6 +3,7 @@
 
 #include <math.h>
 #include "../costant.h"
+#include "../preciseOperation.h"
 
 #if FUNCTION == GRIEWANK
 
