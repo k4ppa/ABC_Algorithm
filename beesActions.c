@@ -54,7 +54,7 @@ void employedPlacement(Bees bees, int i)
 		float fitness = formulae(position);
 		if (fitness == 0.0)
 			return 1;
-		return fitness;
+		return fabs(fitness);
 	}
 		
 			
