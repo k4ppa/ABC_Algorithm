@@ -51,7 +51,10 @@ void employedPlacement(Bees bees, int i)
 
 	float evaluateFitness(float position[])
 	{
-		return formulae(position);
+		float fitness = formulae(position);
+		if (fitness == 0.0)
+			return 1;
+		return fitness;
 	}
 		
 			
